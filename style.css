@@ -10,3 +10,7 @@ License:        GNU General Public License
 License URI:    license.txt
 Text Domain:    tna-base
 */
+
+body {
+    background-color: #fff;
+}
