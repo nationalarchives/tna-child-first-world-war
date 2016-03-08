@@ -12,5 +12,13 @@ Text Domain:    tna-base
 */
 
 body {
-    background-color: #fff;
+    
+}
+
+article .entry-header h1, article .entry-header h2 {
+    background-color: #6e1608;
+}
+
+a:active, a:link, a:visited {
+    color: #6e1608;
 }
