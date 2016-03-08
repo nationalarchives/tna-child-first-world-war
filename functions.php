@@ -1,11 +1,4 @@
 <?php
-/*
- *
- * ================================================================================================
- *              Removing Metaboxes & Post Tags from Child Theme
- * ================================================================================================
- *
- */
 
 function dequeue_parent_style() {
     wp_dequeue_style('tna-styles');
@@ -37,51 +30,3 @@ if (!function_exists('remove_page_metaboxes')) {
     }
 }
 add_action('admin_menu','remove_page_metaboxes');
-
-
-
-/*
- *
- * ================================================
- *    Override unneeded functions from parent
- * ================================================
- *
- */
-
-
-function education_resource_init () {
-	// remove
-}
-function my_add_excerpts_to_pages () {
-	// remove
-}
-function create_post_type () {
-	// remove
-}
-function create_post_type2 () {
-	// remove
-}
-function get_indicator () {
-	// remove
-}
-function get_glossary () {
-	// remove
-}
-function guidance_init () {
-	// remove
-}
-function m_explode () {
-	// remove
-}
-function banner_messages () {
-	// remove
-}
-function create_events_cpt () {
-	// remove
-}
-function include_template_function () {
-	// remove
-}
-function flexslider_shortcode () {
-	// remove
-}
