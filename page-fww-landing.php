@@ -3,8 +3,10 @@
 Template Name: FWW landing
 */
 get_header(); ?>
-<?php get_template_part( 'breadcrumb' ); ?>
-
+<div class="fww">
+	<div class="banner" role="banner">
+		<?php get_template_part( 'breadcrumb' ); ?>
+	</div>
 	<main id="main" class="content-area" role="main">
 		<div class="container">
 			<div class="row">
@@ -23,5 +25,5 @@ get_header(); ?>
 			</div>
 		</div>
 	</main>
-
+</div>
 <?php get_footer(); ?>
