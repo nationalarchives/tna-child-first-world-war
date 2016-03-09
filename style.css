@@ -10,3 +10,15 @@ License:        GNU General Public License
 License URI:    license.txt
 Text Domain:    tna-base
 */
+
+body {
+    
+}
+
+article .entry-header h1, article .entry-header h2 {
+    background-color: #6e1608;
+}
+
+a:active, a:link, a:visited {
+    color: #6e1608;
+}
