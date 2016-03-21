@@ -6,6 +6,9 @@ get_header(); ?>
 <div class="fww">
 	<div class="banner" role="banner">
 		<?php get_template_part( 'breadcrumb' ); ?>
+		<div class="heading-banner text-center">
+			<h1>First World War</h1>
+		</div>
 	</div>
 	<main id="main" class="content-area" role="main">
 		<div class="container">
