@@ -20,7 +20,14 @@ body {
 }
 
 .fww .banner {
-    background: #ddd;
+    background: url("img/fww-bg.jpg") #ddd;
+    background-size: cover;
+}
+
+.fww .banner h1 {
+    font-size: 400%;
+    color: #fff;
+    text-shadow: 3px 3px 5px #000;
 }
 
 article .entry-header h1, article .entry-header h2 {
