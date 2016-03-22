@@ -15,6 +15,58 @@ body {
     
 }
 
+.tna-breadcrumb {
+    margin-top: 0;
+}
+
+.fww .banner {
+    background: url("img/fww-banner-bg.jpg") #ddd;
+    background-size: cover;
+}
+
+.fww .banner h1 {
+    font-size: 400%;
+    color: #fff;
+    text-shadow: 2px 2px 8px #000;
+}
+
+.fww-menu {
+    padding: 0.4em 0;
+    background: #2d3b59;
+    color: #fff;
+    margin-bottom: 1em;
+}
+
+section {
+    margin-bottom: 1em;
+}
+
+.social h2 {
+    margin: 0;
+    line-height: 50px;
+}
+
+.social {
+    background: #ddd;
+    padding: 0.3em;
+}
+
+.social form {
+    margin: 5px 0;
+}
+
+.social #Email {
+    height: 40px;
+}
+
+.fww-box {
+    background: #fff;
+}
+
+.fww-box .entry-fww {
+    padding: 0 1em;
+}
+
 article .entry-header h1, article .entry-header h2 {
     background-color: #6e1608;
 }
