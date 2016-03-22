@@ -30,6 +30,22 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
+					<section>
+						<h2 class="">Stay up-to-date with all our centenary activity</h2>
+						<form name="signup" id="banner-form" class="pad-medium" action="http://dmtrk.co.uk/signup.ashx" method="post">
+							<input type="hidden" name="addressbookid" value="281378"><input type="hidden" name="userid" value="28895">
+							<input type="hidden" name="ReturnURL" value="http://nationalarchives.gov.uk/news/subscribe-confirmation.htm">
+							<input type="email" id="Email" name="Email" required="" placeholder="Enter your email address">
+							<input id="newsletterSignUp" type="submit" value="Subscribe" class="button">
+						</form>
+                        <span class="float-right">
+	                        <div class="sprite icon-facebook"></div><div class="sprite icon-twitter"></div>
+                        </span>
+					</section>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<div class="entry-header">
