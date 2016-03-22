@@ -17,10 +17,10 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>
-	<div role="navigation">
+	<div class="fww-menu" role="navigation">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12 text-center">
 					Menu bar
 				</div>
 			</div>
