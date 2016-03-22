@@ -54,7 +54,7 @@ get_header(); ?>
 					</div>
 				</section>
 				<section class="featured">
-					<div class="row">
+					<div class="row equal-heights" id="equal-heights">
 						<div class="col-md-4">
 							<div class="fww-box clearfix">
 								<img src="http://placehold.it/440x160" class="img-responsive">
@@ -87,7 +87,7 @@ get_header(); ?>
 							</div>
 						</div>
 						</div>
-					<div class="row">
+					<div class="row equal-heights" id="equal-heights">
 						<div class="col-md-4">
 							<div class="fww-box clearfix">
 								<img src="http://placehold.it/440x160" class="img-responsive">
