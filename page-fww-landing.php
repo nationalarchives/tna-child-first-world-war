@@ -57,47 +57,59 @@ get_header(); ?>
 					<div class="row equal-heights" id="equal-heights">
 						<div class="col-md-4">
 							<div class="fww-box clearfix">
-								<img src="http://placehold.it/440x160" class="img-responsive">
-								<div class="entry-fww">
-									<p>Event</p>
-									<h2><a href="#">Hands on History: Theatre in the First World War</a></h2>
-									<p>Friday 11 March, 09:45-16:30</p>
+								<?php
+								$url = 'https://www.eventbriteapi.com/v3/events/search/?q=first+world+war&sort_by=date&organizer.id=2226699547&token=5VVFLKAPZUXJSKQ3QTBG';
+								$json = file_get_contents($url);
+								$data = json_decode($json);
+								date_default_timezone_set('Europe/London');
+								for ($i = 0; $i < 1; ++$i) {
+									$atomDate = $data->events[$i]->start->local;
+									$newDate = date('l j M Y, H:i', strtotime($atomDate));
+									echo '<a href="#"><img src="' . $data->events[$i]->logo->url . '" class="img-responsive"></a>';
+									echo '<div class="entry-fww"><small>Event highlight</small>';
+									echo '<h2><a href="' . $data->events[$i]->url . '" target="_blank">' . $data->events[$i]->name->text . '</a></h2>';
+									echo '<p>' . $newDate . '<p>';
+									// echo '<p>' . $data->events[$i]->description->text . '<p>';
+								}
+								?>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-4">
-							<div class="fww-box clearfix">
-								<img src="http://placehold.it/440x160" class="img-responsive">
-								<div class="entry-fww">
-									<p>Feature</p>
-									<h2><a href="#">Unit war diaries</a></h2>
-									<p>We've published more digitised unit war diaries on Discovery.
-										Search now by regiment, battalion, brigade or division number:</p>
+						<?php
+						$args = array( 'posts_per_page' => 2, 'category' => 'fww' );
+						$fwwposts = get_posts( $args );
+						foreach ( $fwwposts as $post ) : setup_postdata( $post ); ?>
+							<div class="col-md-4">
+								<div class="fww-box clearfix">
+									<div class="thumb-img">
+										<a href="<?php the_permalink(); ?>">
+											<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
+										</a>
+									</div>
+									<div class="entry-fww">
+										<small>Feature</small>
+										<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+										<p><?php the_excerpt(); ?></p>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="fww-box clearfix">
-								<img src="http://placehold.it/440x160" class="img-responsive">
-								<div class="entry-fww">
-									<p>Feature</p>
-									<h2><a href="#">Unit war diaries</a></h2>
-									<p>We've published more digitised unit war diaries on Discovery.
-										Search now by regiment, battalion, brigade or division number:</p>
-								</div>
-							</div>
-						</div>
+						<?php endforeach;
+						wp_reset_postdata();?>
 					</div>
 					<div class="row equal-heights" id="equal-heights">
 						<?php fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '12' ) ?>
 						<div class="col-md-6">
 							<div class="fww-box clearfix">
 								<div class="thumb-img">
-									<img src="http://blog.nationalarchives.gov.uk/wp-content/uploads/2016/02/Untitled-3.jpg" class="img-responsive">
+									<a href="http://www.nationalarchives.gov.uk/about/news/first-world-war-related-baby-names-revealed/">
+										<img src="http://blog.nationalarchives.gov.uk/wp-content/uploads/2016/02/Untitled-3.jpg" class="img-responsive">
+									</a>
 								</div>
 								<div class="entry-fww">
 									<p>News</p>
-									<h2><a href="http://www.nationalarchives.gov.uk/about/news/first-world-war-related-baby-names-revealed/">First World War related baby names revealed</a></h2>
+									<h2><a href="http://www.nationalarchives.gov.uk/about/news/first-world-war-related-baby-names-revealed/">
+											First World War related baby names revealed
+									</a></h2>
 									<small>18 February 2016</small>
 									<p>There were 1,634 babies given First World War related names during the war (1914-1919) in England and Wales, new data analysis reveals. The battles...</p>
 								</div>
