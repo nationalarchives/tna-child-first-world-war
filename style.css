@@ -51,7 +51,15 @@ Text Domain:    tna-base
 .fww-box .entry-fww {
     padding: 0 1em;
 }
-article .entry-header h1, article .entry-header h2 {
+.thumb-img {
+    max-height: 210px;
+    overflow: hidden;
+}
+.thumb-img img {
+    width: 100%;
+    height: auto;
+}
+article .entry-header h1, article .entry-header h2, aside .sidebar-header h2 {
     background-color: #6e1608;
 }
 a:active, a:link, a:visited {

@@ -80,40 +80,25 @@ get_header(); ?>
 							<div class="fww-box clearfix">
 								<img src="http://placehold.it/440x160" class="img-responsive">
 								<div class="entry-fww">
-									<p>Blog</p>
-									<h2><a href="#">Building a virtual First World War village</a></h2>
-									<p>Within the archives there are many stories of events on the Home Front during the First World War.</p>
-								</div>
-							</div>
-						</div>
-						</div>
-					<div class="row equal-heights" id="equal-heights">
-						<div class="col-md-4">
-							<div class="fww-box clearfix">
-								<img src="http://placehold.it/440x160" class="img-responsive">
-								<div class="entry-fww">
 									<p>Feature</p>
-									<h2><a href="#">Interactive global First World War map</a></h2>
-									<p>Explore the global impact of the First World War through our new online map, which highlights key events and figures in the conflict from our records.</p>
+									<h2><a href="#">Unit war diaries</a></h2>
+									<p>We've published more digitised unit war diaries on Discovery.
+										Search now by regiment, battalion, brigade or division number:</p>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-4">
+					</div>
+					<div class="row equal-heights" id="equal-heights">
+						<?php fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '12' ) ?>
+						<div class="col-md-6">
 							<div class="fww-box clearfix">
-								<img src="http://placehold.it/440x160" class="img-responsive">
-								<div class="entry-fww">
-									<p>News</p>
-									<h2><a href="#">Works by artist Sarah Kogan to be shown at The National Archives</a></h2>
-									<p>We have today announced an exhibition of contemporary art, set to be welcomed to The National Archives next month. Changing the Landscape, an ambitious...</p>
+								<div class="thumb-img">
+									<img src="http://blog.nationalarchives.gov.uk/wp-content/uploads/2016/02/Untitled-3.jpg" class="img-responsive">
 								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="fww-box clearfix">
-								<img src="http://placehold.it/440x160" class="img-responsive">
 								<div class="entry-fww">
 									<p>News</p>
-									<h2><a href="#">First World War related baby names revealed</a></h2>
+									<h2><a href="http://www.nationalarchives.gov.uk/about/news/first-world-war-related-baby-names-revealed/">First World War related baby names revealed</a></h2>
+									<small>18 February 2016</small>
 									<p>There were 1,634 babies given First World War related names during the war (1914-1919) in England and Wales, new data analysis reveals. The battles...</p>
 								</div>
 							</div>
@@ -194,13 +179,13 @@ get_header(); ?>
 								<h2>About our programme</h2>
 							</div>
 							<div class="entry-content clearfix">
-									<div class="fww-box clearfix">
-										<a href="#"><img src="http://placehold.it/560x160" class="img-responsive"></a>
-										<div class="entry-fww">
-											<h3><a href="#">Title</a></h3>
-											<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
-										</div>
+								<div class="fww-box clearfix">
+									<a href="#"><img src="http://placehold.it/560x160" class="img-responsive"></a>
+									<div class="entry-fww">
+										<h3><a href="#">Title</a></h3>
+										<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
 									</div>
+								</div>
 							</div>
 						</article>
 					</div>
