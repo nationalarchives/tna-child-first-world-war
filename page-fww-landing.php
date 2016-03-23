@@ -208,11 +208,19 @@ get_header(); ?>
 							</div>
 							<div class="entry-content clearfix">
 								<div class="fww-box clearfix">
-									<a href="#"><img src="http://placehold.it/560x160" class="img-responsive"></a>
-									<div class="entry-fww">
-										<h3><a href="#">Title</a></h3>
-										<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
+									<div class="thumb-img">
+										<img src="http://placehold.it/560x160" class="img-responsive">
 									</div>
+									<ul>
+									<?php
+									for ($i = 0; $i < 4; ++$i) {
+										$atomDate = $data->events[$i]->start->local;
+										$newDate = date('l j M Y, H:i', strtotime($atomDate));
+										echo '<li><h3><a href="' . $data->events[$i]->url . '" target="_blank">' . $data->events[$i]->name->text . '</a></h3>';
+										echo '<p>' . $newDate . '<p></li>';
+									}
+									?>
+									</ul>
 								</div>
 							</div>
 						</article>
