@@ -30,10 +30,10 @@ get_header(); ?>
 			<div class="container">
 				<section class="social">
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<h2>Stay up-to-date with all our centenary activity</h2>
 						</div>
-						<div class="col-md-4">
+						<div class="col-sm-4">
 							<form name="signup" id="banner-form" class="pad-medium"
 							      action="http://dmtrk.co.uk/signup.ashx"
 							      method="post">
@@ -47,7 +47,7 @@ get_header(); ?>
 								<input id="newsletterSignUp" type="submit" value="Subscribe" class="button">
 							</form>
 						</div>
-						<div class="col-md-2">
+						<div class="col-sm-2">
 							<span class="sprite icon-facebook pull-right"></span>
 							<span class="sprite icon-twitter pull-right"></span>
 						</div>
@@ -55,7 +55,7 @@ get_header(); ?>
 				</section>
 				<section class="featured">
 					<div class="row equal-heights" id="equal-heights">
-						<div class="col-md-4">
+						<div class="col-sm-4">
 							<div class="fww-box clearfix">
 								<?php
 								$url = 'https://www.eventbriteapi.com/v3/events/search/?q=first+world+war&sort_by=date&organizer.id=2226699547&token=5VVFLKAPZUXJSKQ3QTBG';
@@ -79,7 +79,7 @@ get_header(); ?>
 						$args = array( 'posts_per_page' => 2, 'category' => 'fww' );
 						$fwwposts = get_posts( $args );
 						foreach ( $fwwposts as $post ) : setup_postdata( $post ); ?>
-							<div class="col-md-4">
+							<div class="col-sm-4">
 								<div class="fww-box clearfix">
 									<div class="thumb-img">
 										<a href="<?php the_permalink(); ?>">
@@ -98,7 +98,7 @@ get_header(); ?>
 					</div>
 					<div class="row equal-heights" id="equal-heights">
 						<?php fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '12' ) ?>
-						<div class="col-md-6">
+						<div class="col-sm-6">
 							<div class="fww-box clearfix">
 								<div class="thumb-img">
 									<a href="http://www.nationalarchives.gov.uk/about/news/first-world-war-related-baby-names-revealed/">
@@ -124,7 +124,7 @@ get_header(); ?>
 								<h2>Explore our records</h2>
 							</div>
 							<div class="entry-content clearfix">
-								<div class="col-md-4">
+								<div class="col-sm-4">
 									<div class="fww-box clearfix">
 										<a href="#"><img src="http://placehold.it/360x160" class="img-responsive"></a>
 										<div class="entry-fww">
@@ -133,7 +133,7 @@ get_header(); ?>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-4">
+								<div class="col-sm-4">
 									<div class="fww-box clearfix">
 										<a href="#"><img src="http://placehold.it/360x160" class="img-responsive"></a>
 										<div class="entry-fww">
@@ -142,7 +142,7 @@ get_header(); ?>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-4">
+								<div class="col-sm-4">
 									<div class="fww-box clearfix">
 										<a href="#"><img src="http://placehold.it/360x160" class="img-responsive"></a>
 										<div class="entry-fww">
@@ -162,7 +162,7 @@ get_header(); ?>
 								<h2>Discover personal stories</h2>
 							</div>
 							<div class="entry-content clearfix">
-								<div class="col-md-6">
+								<div class="col-sm-6">
 									<div class="fww-box clearfix">
 										<a href="#"><img src="http://placehold.it/560x160" class="img-responsive"></a>
 										<div class="entry-fww">
@@ -171,7 +171,7 @@ get_header(); ?>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-sm-6">
 									<div class="fww-box clearfix">
 										<a href="#"><img src="http://placehold.it/560x160" class="img-responsive"></a>
 										<div class="entry-fww">
@@ -185,7 +185,7 @@ get_header(); ?>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-sm-4">
 						<article>
 							<div class="entry-header">
 								<h2>About our programme</h2>
@@ -201,23 +201,31 @@ get_header(); ?>
 							</div>
 						</article>
 					</div>
-					<div class="col-md-4">
+					<div class="col-sm-4">
 						<article>
 							<div class="entry-header">
 								<h2>What's on</h2>
 							</div>
 							<div class="entry-content clearfix">
 								<div class="fww-box clearfix">
-									<a href="#"><img src="http://placehold.it/560x160" class="img-responsive"></a>
-									<div class="entry-fww">
-										<h3><a href="#">Title</a></h3>
-										<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
+									<div class="thumb-img">
+										<img src="http://placehold.it/560x160" class="img-responsive">
 									</div>
+									<ul>
+									<?php
+									for ($i = 0; $i < 4; ++$i) {
+										$atomDate = $data->events[$i]->start->local;
+										$newDate = date('l j M Y, H:i', strtotime($atomDate));
+										echo '<li><h3><a href="' . $data->events[$i]->url . '" target="_blank">' . $data->events[$i]->name->text . '</a></h3>';
+										echo '<p>' . $newDate . '<p></li>';
+									}
+									?>
+									</ul>
 								</div>
 							</div>
 						</article>
 					</div>
-					<div class="col-md-4">
+					<div class="col-sm-4">
 						<article>
 							<div class="entry-header">
 								<h2>Bookshop</h2>
