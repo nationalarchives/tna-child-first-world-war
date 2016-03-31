@@ -46,6 +46,19 @@ function tna_child_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'tna_child_scripts' );
 
+function add_categories_to_pages() {
+    register_taxonomy_for_object_type( 'category', 'page' );
+}
+add_action( 'init', 'add_categories_to_pages' );
+
+if ( ! is_admin() ) {
+    add_action( 'pre_get_posts', 'category_archives' );
+}
+function category_archives( $wp_query ) {
+    $my_post_array = array('post','page');
+    if ( $wp_query->get( 'category_name' ) || $wp_query->get( 'cat' ) )
+        $wp_query->set( 'post_type', $my_post_array );
+}
 
 // Dynamic content via RSS feeds
 function fww_rss( $rssUrl, $id ) {
@@ -61,18 +74,17 @@ function fww_rss( $rssUrl, $id ) {
         if ( $content !== false ) {
             $x = new SimpleXmlElement( $content );
             $n = 0;
-            // Loop through each feed item and display each item as a hyperlink
+            // Loop through each feed item and display each item
             foreach ( $x->channel->item as $item ) :
                 if ( $n == 1 ) {
                     break;
                 }
-                global $html;
                 $enclosure  = $item->enclosure['url'];
                 $namespaces = $item->getNameSpaces( true );
                 $dc         = $item->children( $namespaces['dc'] );
                 $pubDate    = $item->pubDate;
                 $pubDate    = date( "l d M Y", strtotime( $pubDate ) );
-                $html .= '<div class="col-md-6"><div class="fww-box clearfix">';
+                $html = '<div class="col-md-6"><div class="fww-box clearfix">';
                 if ( $enclosure ) {
                     $html .= '<div class="thumb-img"><a href="' . $item->link . '" title="' . $item->title . '"">';
                     $html .= '<img src="' . $enclosure . '" class="img-responsive" alt="' . $item->title . '">';
@@ -87,6 +99,57 @@ function fww_rss( $rssUrl, $id ) {
                 $n ++;
             endforeach;
             set_transient( 'tna_rss_blog_transient' . $id, $html, HOUR_IN_SECONDS );
+            echo $html;
+        }
+        else {
+            echo '<p>No content</p>';
+        }
+    }
+}
+
+// Dynamic content via RSS feeds
+function fww_news_rss( $rssUrlNews, $id ) {
+    // Do we have this information in our transients already?
+    $transient_news = get_transient( 'tna_rss_news_transient' . $id );
+    // Yep!  Just return it and we're done.
+    if( ! empty( $transient_news ) ) {
+        echo $transient_news ;
+        // Nope!  We gotta make a call.
+    } else {
+        // Get feed source.
+        $content = file_get_contents( $rssUrlNews );
+        if ( $content !== false ) {
+            $x = new SimpleXmlElement( $content );
+            $n = 0;
+            // Loop through each feed item and display each item
+            foreach ( $x->channel->item as $item ) :
+                if ( $n == 1 ) {
+                    break;
+                }
+                // $enclosure  = $item->enclosure['url'];
+                $namespaces = $item->getNameSpaces( true );
+                $dc         = $item->children( $namespaces['dc'] );
+                $pubDate    = $item->pubDate;
+                $pubDate    = date( "l d M Y", strtotime( $pubDate ) );
+                $img        = str_replace( home_url(), '', get_stylesheet_directory_uri() ) . '/img/thumb-news.jpg';
+                $link       = str_replace( 'livelb', 'www', $item->link );
+                $html = '<div class="col-md-6"><div class="fww-box clearfix">';
+                if ( $img ) {
+                    $html .= '<div class="thumb-img"><a href="' . $link . '" title="' . $item->title . '"">';
+                    $html .= '<img src="' . $img . '" class="img-responsive" alt="' . $item->title . '">';
+                    $html .= '</a></div>';
+                }
+                $html .= '<div class="entry-fww"><small>News</small><h2><a href="' . $link . '">';
+                $html .= $item->title;
+                $html .= '</a></h2>';
+                $html .= '<small>' . $dc->creator . ' | ' . $pubDate . '</small>';
+                preg_match( "/<p>(.*)<\/p>/", $item->description, $matches );
+                $intro = strip_tags($matches[1]);
+                $html .= '<p>' . $intro . '</p><p><a href="http://www.nationalarchives.gov.uk/about/news/?news-tag=first-world-war&news-view=child" title="Read more news">More news</a></p></div>';
+                $html .= '</div></div>';
+                $n ++;
+            endforeach;
+            set_transient( 'tna_rss_news_transient' . $id, $html, HOUR_IN_SECONDS );
             echo $html;
         }
         else {

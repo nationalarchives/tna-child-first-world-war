@@ -76,8 +76,8 @@ get_header(); ?>
 							</div>
 						</div>
 						<?php
-						$args = array( 'posts_per_page' => 2, 'category' => 'fww' );
-						$fwwposts = get_posts( $args );
+						$args = array( 'posts_per_page' => 2, 'category_name' => 'fww' );
+						$fwwposts = new WP_Query( $args );
 						foreach ( $fwwposts as $post ) : setup_postdata( $post ); ?>
 							<div class="col-sm-4">
 								<div class="fww-box clearfix">
@@ -97,24 +97,8 @@ get_header(); ?>
 						wp_reset_postdata();?>
 					</div>
 					<div class="row equal-heights" id="equal-heights">
-						<?php fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '12' ) ?>
-						<div class="col-sm-6">
-							<div class="fww-box clearfix">
-								<div class="thumb-img">
-									<a href="http://www.nationalarchives.gov.uk/about/news/first-world-war-related-baby-names-revealed/">
-										<img src="http://blog.nationalarchives.gov.uk/wp-content/uploads/2016/02/Untitled-3.jpg" class="img-responsive">
-									</a>
-								</div>
-								<div class="entry-fww">
-									<p>News</p>
-									<h2><a href="http://www.nationalarchives.gov.uk/about/news/first-world-war-related-baby-names-revealed/">
-											First World War related baby names revealed
-									</a></h2>
-									<small>18 February 2016</small>
-									<p>There were 1,634 babies given First World War related names during the war (1914-1919) in England and Wales, new data analysis reveals. The battles...</p>
-								</div>
-							</div>
-						</div>
+						<?php fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '14' ) ?>
+						<?php fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '15' ) ?>
 					</div>
 				</section>
 				<div class="row">
