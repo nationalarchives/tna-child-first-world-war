@@ -73,7 +73,7 @@ get_header(); ?>
 								for ($i = 0; $i < 1; ++$i) {
 									$atomDate = $data->events[$i]->start->local;
 									$newDate = date('l j M Y, H:i', strtotime($atomDate));
-									echo '<a href="#"><img src="' . $data->events[$i]->logo->url . '" class="img-responsive"></a>';
+									echo '<div class="thumb-img"><a href="#"><img src="' . $data->events[$i]->logo->url . '" class="img-responsive"></a></div>';
 									echo '<div class="entry-fww"><small>Whats on</small>';
 									echo '<h2><a href="' . $data->events[$i]->url . '" target="_blank">' . $data->events[$i]->name->text . '</a></h2>';
 									echo '<p>' . $newDate . '<p>';
@@ -165,11 +165,9 @@ get_header(); ?>
 													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/soldiers-MUN-5_157_1916-1918.jpg" class="img-responsive">
 												</a>
 											</div>
-											<div class="entry-fww">
 												<small>Soldiers' letters</small>
 												<h3><a href="#">Telling Tommies' tales</a></h3>
 												<p>Explore soldiers' personal accounts of the First World War using our classroom resource.</p>
-											</div>
 										</div>
 									</div>
 									<div class="col-sm-6">
@@ -179,11 +177,9 @@ get_header(); ?>
 													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/podcasts-MUN-5_394_40_June-1915.jpg" class="img-responsive">
 												</a>
 											</div>
-											<div class="entry-fww">
 												<small>Poscasts and videos</small>
 												<h3><a href="#">First World War</a></h3>
 												<p>Use our podcasts and videos to help you explore our records of the First World War, from tracing battalions of the British Army to the Women's Land Army.</p>
-											</div>
 										</div>
 									</div>
 								</div>
@@ -203,11 +199,9 @@ get_header(); ?>
 										<div class="thumb-img">
 											<img src="<?php echo get_stylesheet_directory_uri() ?>/img/programme-MUN-5_165_1124_48_1_1920.jpg" class="img-responsive">
 										</div>
-										<div class="entry-fww">
 											<h3>First World War 100</h3>
 											<p>We are marking the centenary of the war with an extensive programme, spanning a five-year period between 2014 and 2019.</p>
 											<p>Find out more about our programme, which explores major anniversaries and key aspects of the war through themes such as technology and the Middle East.</p>
-										</div>
 									</div>
 								</div>
 							</article>
@@ -257,10 +251,8 @@ get_header(); ?>
 												<img src="<?php echo get_stylesheet_directory_uri() ?>/img/tnabookshop.jpg" class="img-responsive">
 											</a>
 										</div>
-										<div class="entry-fww">
 											<h3>Opening hours</h3>
 											<p>Visit The National Archives Bookshop at Kew.<br>Open 09:00-17:00 Tuesday to Saturday.</p>
-										</div>
 									</div>
 								</div>
 							</article>
