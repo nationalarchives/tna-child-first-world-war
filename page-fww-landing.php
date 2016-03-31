@@ -22,9 +22,18 @@ get_header(); ?>
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul>
-							<li><a href="#explore-our-records">Explore our records</a></li>
-							<li><a href="#discover-personal-stories">Discover personal stories</a></li>
-							<li><a href="#about-our-programme">About our programme</a></li>
+							<li>
+								<img src="<?php echo get_stylesheet_directory_uri() ?>/img/menu-link.png">
+								<a href="#explore-our-records">Explore our records</a>
+							</li>
+							<li>
+								<img src="<?php echo get_stylesheet_directory_uri() ?>/img/menu-link.png">
+								<a href="#discover-personal-stories">Discover personal stories</a>
+							</li>
+							<li>
+								<img src="<?php echo get_stylesheet_directory_uri() ?>/img/menu-link.png">
+								<a href="#about-our-programme">About our programme</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -32,22 +41,17 @@ get_header(); ?>
 		</div>
 		<main id="main" class="content-area" role="main">
 			<div class="container">
-				<section class="register">
+				<section class="connect">
 					<div class="row">
 						<div class="col-sm-6">
 							<h2>Stay up-to-date with all our centenary activity</h2>
 						</div>
 						<div class="col-sm-4">
-							<form name="signup" id="banner-form" class="pad-medium"
-							      action="http://dmtrk.co.uk/signup.ashx"
-							      method="post">
-								<input type="hidden" name="addressbookid" value="281378"><input type="hidden"
-								                                                                name="userid"
-								                                                                value="28895">
-								<input type="hidden" name="ReturnURL"
-								       value="http://nationalarchives.gov.uk/news/subscribe-confirmation.htm">
-								<input type="email" id="Email" name="Email" required=""
-								       placeholder="Enter your email address">
+							<form name="signup" id="banner-form" class="pad-medium" action="http://dmtrk.co.uk/signup.ashx" method="post">
+								<input type="hidden" name="addressbookid" value="281378">
+								<input type="hidden" name="userid" value="28895">
+								<input type="hidden" name="ReturnURL" value="http://nationalarchives.gov.uk/news/subscribe-confirmation.htm">
+								<input type="email" id="Email" name="Email" required="" placeholder="Enter your email address">
 								<input id="newsletterSignUp" type="submit" value="Subscribe" class="button">
 							</form>
 						</div>
@@ -70,7 +74,7 @@ get_header(); ?>
 									$atomDate = $data->events[$i]->start->local;
 									$newDate = date('l j M Y, H:i', strtotime($atomDate));
 									echo '<a href="#"><img src="' . $data->events[$i]->logo->url . '" class="img-responsive"></a>';
-									echo '<div class="entry-fww"><small>Event highlight</small>';
+									echo '<div class="entry-fww"><small>Whats on</small>';
 									echo '<h2><a href="' . $data->events[$i]->url . '" target="_blank">' . $data->events[$i]->name->text . '</a></h2>';
 									echo '<p>' . $newDate . '<p>';
 									// echo '<p>' . $data->events[$i]->description->text . '<p>';
@@ -156,19 +160,29 @@ get_header(); ?>
 								<div class="entry-content clearfix">
 									<div class="col-sm-6">
 										<div class="fww-box clearfix">
-											<a href="#"><img src="http://placehold.it/560x160" class="img-responsive"></a>
+											<div class="thumb-img">
+												<a href="#">
+													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/soldiers-MUN-5_157_1916-1918.jpg" class="img-responsive">
+												</a>
+											</div>
 											<div class="entry-fww">
-												<h3><a href="#">Title</a></h3>
-												<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
+												<small>Soldiers' letters</small>
+												<h3><a href="#">Telling Tommies' tales</a></h3>
+												<p>Explore soldiers' personal accounts of the First World War using our classroom resource.</p>
 											</div>
 										</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="fww-box clearfix">
-											<a href="#"><img src="http://placehold.it/560x160" class="img-responsive"></a>
+											<div class="thumb-img">
+												<a href="#">
+													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/podcasts-MUN-5_394_40_June-1915.jpg" class="img-responsive">
+												</a>
+											</div>
 											<div class="entry-fww">
-												<h3><a href="#">Title</a></h3>
-												<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
+												<small>Poscasts and videos</small>
+												<h3><a href="#">First World War</a></h3>
+												<p>Use our podcasts and videos to help you explore our records of the First World War, from tracing battalions of the British Army to the Women's Land Army.</p>
 											</div>
 										</div>
 									</div>
@@ -186,10 +200,13 @@ get_header(); ?>
 								</div>
 								<div class="entry-content clearfix">
 									<div class="fww-box clearfix">
-										<a href="#"><img src="http://placehold.it/640x240" class="img-responsive"></a>
+										<div class="thumb-img">
+											<img src="<?php echo get_stylesheet_directory_uri() ?>/img/programme-MUN-5_165_1124_48_1_1920.jpg" class="img-responsive">
+										</div>
 										<div class="entry-fww">
-											<h3><a href="#">Title</a></h3>
-											<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
+											<h3>First World War 100</h3>
+											<p>We are marking the centenary of the war with an extensive programme, spanning a five-year period between 2014 and 2019.</p>
+											<p>Find out more about our programme, which explores major anniversaries and key aspects of the war through themes such as technology and the Middle East.</p>
 										</div>
 									</div>
 								</div>
@@ -203,17 +220,26 @@ get_header(); ?>
 								<div class="entry-content clearfix">
 									<div class="fww-box clearfix">
 										<div class="thumb-img">
-											<img src="http://placehold.it/640x240" class="img-responsive">
+											<img src="<?php echo get_stylesheet_directory_uri() ?>/img/whatson-CAB-45_7_1914.jpg" class="img-responsive">
 										</div>
+										<h3>Events calendar</h3>
 										<ul>
 										<?php
-										for ($i = 0; $i < 4; ++$i) {
+										for ($i = 0; $i < 3; ++$i) {
 											$atomDate = $data->events[$i]->start->local;
 											$newDate = date('l j M Y, H:i', strtotime($atomDate));
-											echo '<li><h3><a href="' . $data->events[$i]->url . '" target="_blank">' . $data->events[$i]->name->text . '</a></h3>';
+											echo '<li><h4><a href="' . $data->events[$i]->url . '" target="_blank">' . $data->events[$i]->name->text . '</a></h4>';
 											echo '<p>' . $newDate . '<p></li>';
 										}
 										?>
+										</ul>
+										<p><a href="#">More events</a></p>
+										<h3>Nationwide centenary activity</h3>
+										<p>First World War centenary events will be taking place across the UK over the next four years.</p>
+										<ul class="urls">
+											<li><a href="#">Government commemoration plans</a></li>
+											<li><a href="#">First World War Centenary Partnership</a></li>
+											<li><a href="#">Events near you</a></li>
 										</ul>
 									</div>
 								</div>
@@ -226,10 +252,14 @@ get_header(); ?>
 								</div>
 								<div class="entry-content clearfix">
 									<div class="fww-box clearfix">
-										<a href="#"><img src="http://placehold.it/640x240" class="img-responsive"></a>
+										<div class="thumb-img">
+											<a href="#">
+												<img src="<?php echo get_stylesheet_directory_uri() ?>/img/tnabookshop.jpg" class="img-responsive">
+											</a>
+										</div>
 										<div class="entry-fww">
-											<h3><a href="#">Title</a></h3>
-											<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
+											<h3>Opening hours</h3>
+											<p>Visit The National Archives Bookshop at Kew.<br>Open 09:00-17:00 Tuesday to Saturday.</p>
 										</div>
 									</div>
 								</div>

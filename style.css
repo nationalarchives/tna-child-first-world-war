@@ -29,19 +29,31 @@ Text Domain:    tna-base
     color: #fff;
     margin-bottom: 1em;
 }
-.social h2 {
+.fww-menu ul {
+    padding: 0;
+    margin: 0;
+}
+.fww-menu ul li {
+    display: inline-block;
+    margin: 0;
+    padding: 0 1em;
+}
+.fww-menu ul li a {
+    color: #fff;
+}
+.connect h2 {
     margin: 0;
     line-height: 50px;
 }
-.social {
+.connect {
     background: #ddd;
     padding: 0.3em;
     margin-bottom: 1em;
 }
-.social form {
+.connect form {
     margin: 5px 0;
 }
-.social #Email {
+.connect #Email {
     height: 40px;
 }
 .fww-box {
