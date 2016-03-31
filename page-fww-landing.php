@@ -21,14 +21,18 @@ get_header(); ?>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						Menu bar
+						<ul>
+							<li><a href="#explore-our-records">Explore our records</a></li>
+							<li><a href="#discover-personal-stories">Discover personal stories</a></li>
+							<li><a href="#about-our-programme">About our programme</a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 		<main id="main" class="content-area" role="main">
 			<div class="container">
-				<section class="social">
+				<section class="register">
 					<div class="row">
 						<div class="col-sm-6">
 							<h2>Stay up-to-date with all our centenary activity</h2>
@@ -72,18 +76,19 @@ get_header(); ?>
 									// echo '<p>' . $data->events[$i]->description->text . '<p>';
 								}
 								?>
+								<p><a href="#">More events</a></p>
 								</div>
 							</div>
 						</div>
 						<?php
-						$args = array( 'posts_per_page' => 2, 'category_name' => 'fww' );
-						$fwwposts = new WP_Query( $args );
+						$args = array( 'posts_per_page' => 2, 'post_type' => 'page', 'category_name' => 'feature' );
+						$fwwposts = get_posts( $args );
 						foreach ( $fwwposts as $post ) : setup_postdata( $post ); ?>
 							<div class="col-sm-4">
 								<div class="fww-box clearfix">
 									<div class="thumb-img">
 										<a href="<?php the_permalink(); ?>">
-											<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
+											<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 										</a>
 									</div>
 									<div class="entry-fww">
@@ -101,131 +106,137 @@ get_header(); ?>
 						<?php fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '15' ) ?>
 					</div>
 				</section>
-				<div class="row">
-					<div class="col-md-12">
-						<article>
-							<div class="entry-header">
-								<h2>Explore our records</h2>
-							</div>
-							<div class="entry-content clearfix">
-								<div class="col-sm-4">
+				<section id="explore-our-records">
+					<div class="row">
+						<div class="col-md-12">
+							<article>
+								<div class="entry-header">
+									<h2>Explore our records</h2>
+								</div>
+								<div class="entry-content clearfix">
+									<div class="col-sm-4">
+										<div class="fww-box clearfix">
+											<a href="#"><img src="http://placehold.it/360x160" class="img-responsive"></a>
+											<div class="entry-fww">
+												<h3><a href="#">Title</a></h3>
+												<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="fww-box clearfix">
+											<a href="#"><img src="http://placehold.it/360x160" class="img-responsive"></a>
+											<div class="entry-fww">
+												<h3><a href="#">Title</a></h3>
+												<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="fww-box clearfix">
+											<a href="#"><img src="http://placehold.it/360x160" class="img-responsive"></a>
+											<div class="entry-fww">
+												<h3><a href="#">Title</a></h3>
+												<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+				</section>
+				<section id="discover-personal-stories">
+					<div class="row">
+						<div class="col-md-12">
+							<article>
+								<div class="entry-header">
+									<h2>Discover personal stories</h2>
+								</div>
+								<div class="entry-content clearfix">
+									<div class="col-sm-6">
+										<div class="fww-box clearfix">
+											<a href="#"><img src="http://placehold.it/560x160" class="img-responsive"></a>
+											<div class="entry-fww">
+												<h3><a href="#">Title</a></h3>
+												<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="fww-box clearfix">
+											<a href="#"><img src="http://placehold.it/560x160" class="img-responsive"></a>
+											<div class="entry-fww">
+												<h3><a href="#">Title</a></h3>
+												<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+				</section>
+				<section id="about-our-programme">
+					<div class="row">
+						<div class="col-sm-4">
+							<article>
+								<div class="entry-header">
+									<h2>About our programme</h2>
+								</div>
+								<div class="entry-content clearfix">
 									<div class="fww-box clearfix">
-										<a href="#"><img src="http://placehold.it/360x160" class="img-responsive"></a>
+										<a href="#"><img src="http://placehold.it/640x240" class="img-responsive"></a>
 										<div class="entry-fww">
 											<h3><a href="#">Title</a></h3>
 											<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4">
+							</article>
+						</div>
+						<div class="col-sm-4">
+							<article>
+								<div class="entry-header">
+									<h2>What's on</h2>
+								</div>
+								<div class="entry-content clearfix">
 									<div class="fww-box clearfix">
-										<a href="#"><img src="http://placehold.it/360x160" class="img-responsive"></a>
+										<div class="thumb-img">
+											<img src="http://placehold.it/640x240" class="img-responsive">
+										</div>
+										<ul>
+										<?php
+										for ($i = 0; $i < 4; ++$i) {
+											$atomDate = $data->events[$i]->start->local;
+											$newDate = date('l j M Y, H:i', strtotime($atomDate));
+											echo '<li><h3><a href="' . $data->events[$i]->url . '" target="_blank">' . $data->events[$i]->name->text . '</a></h3>';
+											echo '<p>' . $newDate . '<p></li>';
+										}
+										?>
+										</ul>
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="col-sm-4">
+							<article>
+								<div class="entry-header">
+									<h2>Bookshop</h2>
+								</div>
+								<div class="entry-content clearfix">
+									<div class="fww-box clearfix">
+										<a href="#"><img src="http://placehold.it/640x240" class="img-responsive"></a>
 										<div class="entry-fww">
 											<h3><a href="#">Title</a></h3>
 											<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4">
-									<div class="fww-box clearfix">
-										<a href="#"><img src="http://placehold.it/360x160" class="img-responsive"></a>
-										<div class="entry-fww">
-											<h3><a href="#">Title</a></h3>
-											<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</article>
+							</article>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<article>
-							<div class="entry-header">
-								<h2>Discover personal stories</h2>
-							</div>
-							<div class="entry-content clearfix">
-								<div class="col-sm-6">
-									<div class="fww-box clearfix">
-										<a href="#"><img src="http://placehold.it/560x160" class="img-responsive"></a>
-										<div class="entry-fww">
-											<h3><a href="#">Title</a></h3>
-											<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="fww-box clearfix">
-										<a href="#"><img src="http://placehold.it/560x160" class="img-responsive"></a>
-										<div class="entry-fww">
-											<h3><a href="#">Title</a></h3>
-											<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</article>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-4">
-						<article>
-							<div class="entry-header">
-								<h2>About our programme</h2>
-							</div>
-							<div class="entry-content clearfix">
-								<div class="fww-box clearfix">
-									<a href="#"><img src="http://placehold.it/560x160" class="img-responsive"></a>
-									<div class="entry-fww">
-										<h3><a href="#">Title</a></h3>
-										<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
-									</div>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-sm-4">
-						<article>
-							<div class="entry-header">
-								<h2>What's on</h2>
-							</div>
-							<div class="entry-content clearfix">
-								<div class="fww-box clearfix">
-									<div class="thumb-img">
-										<img src="http://placehold.it/560x160" class="img-responsive">
-									</div>
-									<ul>
-									<?php
-									for ($i = 0; $i < 4; ++$i) {
-										$atomDate = $data->events[$i]->start->local;
-										$newDate = date('l j M Y, H:i', strtotime($atomDate));
-										echo '<li><h3><a href="' . $data->events[$i]->url . '" target="_blank">' . $data->events[$i]->name->text . '</a></h3>';
-										echo '<p>' . $newDate . '<p></li>';
-									}
-									?>
-									</ul>
-								</div>
-							</div>
-						</article>
-					</div>
-					<div class="col-sm-4">
-						<article>
-							<div class="entry-header">
-								<h2>Bookshop</h2>
-							</div>
-							<div class="entry-content clearfix">
-								<div class="fww-box clearfix">
-									<a href="#"><img src="http://placehold.it/560x160" class="img-responsive"></a>
-									<div class="entry-fww">
-										<h3><a href="#">Title</a></h3>
-										<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
-									</div>
-								</div>
-							</div>
-						</article>
-					</div>
-				</div>
+				</section>
 			</div>
 		</main>
 	</div>
