@@ -80,7 +80,7 @@ get_header(); ?>
 									// echo '<p>' . $data->events[$i]->description->text . '<p>';
 								}
 								?>
-								<p><a href="#">More events</a></p>
+								<ul class="child"><li><a href="#">More events</a></li></ul>
 								</div>
 							</div>
 						</div>
@@ -106,8 +106,8 @@ get_header(); ?>
 						wp_reset_postdata();?>
 					</div>
 					<div class="row equal-heights" id="equal-heights">
-						<?php fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '14' ) ?>
-						<?php fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '15' ) ?>
+						<?php fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '19' ) ?>
+						<?php fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '18' ) ?>
 					</div>
 				</section>
 				<section id="explore-our-records">
@@ -233,7 +233,7 @@ get_header(); ?>
 										}
 										?>
 										</ul>
-										<p><a href="#">More events</a></p>
+										<ul class="child"><li><a href="#">More events</a></li></ul>
 										<h3>Nationwide centenary activity</h3>
 										<p>First World War centenary events will be taking place across the UK over the next four years.</p>
 										<ul class="urls">

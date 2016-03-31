@@ -94,7 +94,7 @@ function fww_rss( $rssUrl, $id ) {
                 $html .= $item->title;
                 $html .= '</a></h2>';
                 $html .= '<small>' . $dc->creator . ' | ' . $pubDate . '</small>';
-                $html .= '<p>' . $item->description . '</p></div>';
+                $html .= '<p>' . $item->description . '</p><ul class="child"><li><a href="http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/">Join us on our blog</a></li></ul></div>';
                 $html .= '</div></div>';
                 $n ++;
             endforeach;
@@ -145,7 +145,7 @@ function fww_news_rss( $rssUrlNews, $id ) {
                 $html .= '<small>' . $dc->creator . ' | ' . $pubDate . '</small>';
                 preg_match( "/<p>(.*)<\/p>/", $item->description, $matches );
                 $intro = strip_tags($matches[1]);
-                $html .= '<p>' . $intro . '</p><p><a href="http://www.nationalarchives.gov.uk/about/news/?news-tag=first-world-war&news-view=child" title="Read more news">More news</a></p></div>';
+                $html .= '<p>' . $intro . '</p><ul class="child"><li><a href="http://www.nationalarchives.gov.uk/about/news/?news-tag=first-world-war&news-view=child" title="Read more news">More news</a></li></ul></div>';
                 $html .= '</div></div>';
                 $n ++;
             endforeach;
