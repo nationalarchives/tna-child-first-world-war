@@ -77,12 +77,12 @@ a:active, a:link, a:visited {
 .tna-breadcrumb {
     margin-top: 0;
 }
-.breadcrumbs {
+.home .breadcrumbs {
     display: inline-block;
     color: #fff;
     padding: 3px 7px;
     background-color: rgba(0,0,0,.5);
 }
-.breadcrumbs a:active, .breadcrumbs a:link, .breadcrumbs a:visited {
+.home .breadcrumbs a:active, .home .breadcrumbs a:link, .home .breadcrumbs a:visited {
     color: #fff;
 }

@@ -131,18 +131,26 @@ get_header(); ?>
 									<div class="col-sm-4">
 										<div class="fww-box clearfix">
 											<div class="thumb-img">
-												<a href="#">
+												<a href="first-world-war/centenary-digitised-records/">
 													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/online-collection.jpg" class="img-responsive" alt="Search our online collections">
 												</a>
 											</div>
-												<h3><a href="#">Search our online collections</a></h3>
+												<h3><a href="first-world-war/centenary-digitised-records/">Browse our online collections</a></h3>
 												<p>We hold a vast collection of documents, letters, diaries, maps and photographs from the First World War, many of which have been digitised.</p>
 												<form>
 													<select name="research-category" id="research-category" class="margin-right-medium">
 														<option value="0">Select a subject</option>
-														<option value="1">Medals</option>
-														<option value="2">RAF officers</option>
-														<option value="3">Merchant seamen</option>
+														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/?research-category=first-world-war&sub-category%5B%5D=medals-and-awards&res-online=1">Medals</option>
+														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/raf-officers-service-records-1918-1919/">RAF officers</option>
+														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-seamens-campaign-medal-records-1914-1918/">Merchant seamen</option>
+														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-nurses-service-records-1914-1918/">Army nurses</option>
+														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/prisoner-of-war-interview-reports-1914-1918/">Prisoners of war</option>
+														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-naval-volunteer-reserve-service-records-1903-1922/">Royal Naval Volunteer Reserve</option>
+														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-naval-division-service-records-1914-1919/">Royal Naval Division</option>
+														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/womens-royal-air-force-service-records-1918-1920/">Women's Royal Air Force</option>
+														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/womens-royal-naval-service-records-1917-1919/">Women's Royal Naval Service</option>
+														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-naval-air-service-officers-service-records-1906-1918/">Royal Naval Air Service</option>
+														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/middlesex-military-service-appeal-tribunal-1916-1918/">Conscription appeals</option>
 													</select>
 												</form>
 										</div>
@@ -150,12 +158,13 @@ get_header(); ?>
 									<div class="col-sm-4">
 										<div class="fww-box clearfix">
 											<div class="thumb-img">
-												<a href="#">
+												<a href="http://www.operationwardiary.org/">
 													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/unit-diaries.jpg" class="img-responsive" alt="Help us tag our war diaries">
 												</a>
 											</div>
-												<h3><a href="#">Help us tag our war diaries</a></h3>
-												<p>Operation War Diary is an exciting new crowdsourcing project - help us to unlock the data in our war diaries. Find out more about crowdsourcing and Operation War Diary or simply go to the website and start tagging.</p>
+												<h3><a href="http://www.operationwardiary.org/">Help us tag our war diaries</a></h3>
+											<p>Operation War Diary is an exciting new crowdsourcing project – help us to unlock the data in our war diaries.</p>
+											<p>Find out more about <a title="Find out more about crowdsourcing and Operation War Diary" href="http://blog.nationalarchives.gov.uk/blog/operation-war-diary-archive-needs/">crowdsourcing and Operation War Diary</a> or simply go to the website and <a title="External website - link opens in a new window" href="http://www.operationwardiary.org/" target="_blank">start tagging</a>.</p>
 										</div>
 									</div>
 								</div>

@@ -7,18 +7,18 @@ function tnatheme_globals() {
     if (substr($_SERVER['REMOTE_ADDR'], 0, 3) === '10.') {
         $pre_path = '';
         $pre_crumbs = array(
-            'Commercial opportunities' => '/'
+            'First World War' => '/'
         );
     } else {
         $pre_crumbs = array(
-            'About us' => '/about/',
-            'Commercial opportunities' => '/about/commercial-opportunities/'
+            'First World War' => '/first-world-war/'
         );
-        $pre_path = '/about/commercial-opportunities';
+        $pre_path = '/first-world-war';
     }
 }
-// For live environment
-// tnatheme_globals();
+if ( $_SERVER['SERVER_ADDR'] !== $_SERVER['REMOTE_ADDR'] ) {
+    tnatheme_globals();
+}
 
 function dequeue_parent_style() {
     wp_dequeue_style('tna-styles');
@@ -37,12 +37,15 @@ function tna_child_styles() {
 add_action( 'wp_enqueue_scripts', 'tna_child_styles' );
 
 function tna_child_scripts() {
-        wp_register_script( 'equal-heights', get_template_directory_uri() . '/js/jQuery.equalHeights.js', array(),
-            EDD_VERSION, true );
-        wp_register_script( 'equal-heights-var', get_template_directory_uri() . '/js/equalHeights.js', array(),
-            EDD_VERSION, true );
-        wp_enqueue_script( 'equal-heights' );
-        wp_enqueue_script( 'equal-heights-var' );
+    wp_register_script( 'equal-heights', get_template_directory_uri() . '/js/jQuery.equalHeights.js', array(),
+        EDD_VERSION, true );
+    wp_register_script( 'equal-heights-var', get_template_directory_uri() . '/js/equalHeights.js', array(),
+        EDD_VERSION, true );
+    wp_register_script( 'tna-fww', get_stylesheet_directory_uri() . '/tna-fww.js', array(),
+    EDD_VERSION, true );
+    wp_enqueue_script( 'equal-heights' );
+    wp_enqueue_script( 'equal-heights-var' );
+    wp_enqueue_script( 'tna-fww' );
 }
 add_action( 'wp_enqueue_scripts', 'tna_child_scripts' );
 
