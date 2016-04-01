@@ -74,7 +74,7 @@ get_header(); ?>
 									$atomDate = $data->events[$i]->start->local;
 									$newDate = date('l j M Y, H:i', strtotime($atomDate));
 									echo '<div class="thumb-img"><a href="#"><img src="' . $data->events[$i]->logo->url . '" class="img-responsive"></a></div>';
-									echo '<div class="entry-fww"><small>Whats on</small>';
+									echo '<div class="entry-fww"><small>What&prime;s on</small>';
 									echo '<h2><a href="' . $data->events[$i]->url . '" target="_blank">' . $data->events[$i]->name->text . '</a></h2>';
 									echo '<p>' . $newDate . '<p>';
 									// echo '<p>' . $data->events[$i]->description->text . '<p>';
@@ -120,29 +120,43 @@ get_header(); ?>
 								<div class="entry-content clearfix">
 									<div class="col-sm-4">
 										<div class="fww-box clearfix">
-											<a href="#"><img src="http://placehold.it/360x160" class="img-responsive"></a>
-											<div class="entry-fww">
-												<h3><a href="#">Title</a></h3>
-												<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
+											<div class="thumb-img">
+												<a href="#">
+													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/fww-records.jpg" class="img-responsive">
+												</a>
 											</div>
+												<h3><a href="#">Find your ancestor in our FWW records</a></h3>
+												<p>If you want to explore our First World War records and are new to researching at The National Archives, you <a href="#">can start your research here</a> or <a href="#">chat to one of our reader advisors online</a>.</p>
 										</div>
 									</div>
 									<div class="col-sm-4">
 										<div class="fww-box clearfix">
-											<a href="#"><img src="http://placehold.it/360x160" class="img-responsive"></a>
-											<div class="entry-fww">
-												<h3><a href="#">Title</a></h3>
-												<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
+											<div class="thumb-img">
+												<a href="#">
+													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/online-collection.jpg" class="img-responsive">
+												</a>
 											</div>
+												<h3><a href="#">Search our online collections</a></h3>
+												<p>We hold a vast collection of documents, letters, diaries, maps and photographs from the First World War, many of which have been digitised.</p>
+												<form>
+													<select name="research-category" id="research-category" class="margin-right-medium">
+														<option value="0">Select a subject</option>
+														<option value="1">Medals</option>
+														<option value="2">RAF officers</option>
+														<option value="3">Merchant seamen</option>
+													</select>
+												</form>
 										</div>
 									</div>
 									<div class="col-sm-4">
 										<div class="fww-box clearfix">
-											<a href="#"><img src="http://placehold.it/360x160" class="img-responsive"></a>
-											<div class="entry-fww">
-												<h3><a href="#">Title</a></h3>
-												<p>Eu congue salutatus philosophia per. Nec ex admodum gubergren.</p>
+											<div class="thumb-img">
+												<a href="#">
+													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/unit-diaries.jpg" class="img-responsive">
+												</a>
 											</div>
+												<h3><a href="#">Help us tag our war diaries</a></h3>
+												<p>Operation War Diary is an exciting new crowdsourcing project - help us to unlock the data in our war diaries. Find out more about crowdsourcing and Operation War Diary or simply go to the website and start tagging.</p>
 										</div>
 									</div>
 								</div>
@@ -247,9 +261,7 @@ get_header(); ?>
 								<div class="entry-content clearfix">
 									<div class="fww-box clearfix">
 										<div class="thumb-img">
-											<a href="#">
 												<img src="<?php echo get_stylesheet_directory_uri() ?>/img/tnabookshop.jpg" class="img-responsive">
-											</a>
 										</div>
 											<h3>Opening hours</h3>
 											<p>Visit The National Archives Bookshop at Kew.<br>Open 09:00-17:00 Tuesday to Saturday.</p>
