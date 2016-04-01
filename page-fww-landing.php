@@ -23,15 +23,12 @@ get_header(); ?>
 					<div class="col-md-12 text-center">
 						<ul>
 							<li>
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/img/menu-link.png">
 								<a href="#explore-our-records">Explore our records</a>
 							</li>
 							<li>
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/img/menu-link.png">
 								<a href="#discover-personal-stories">Discover personal stories</a>
 							</li>
 							<li>
-								<img src="<?php echo get_stylesheet_directory_uri() ?>/img/menu-link.png">
 								<a href="#about-our-programme">About our programme</a>
 							</li>
 						</ul>
@@ -62,7 +59,7 @@ get_header(); ?>
 					</div>
 				</section>
 				<section class="featured">
-					<div class="row equal-heights" id="equal-heights">
+					<div class="row equal-heights">
 						<div class="col-sm-4">
 							<div class="fww-box clearfix">
 								<?php
@@ -97,14 +94,14 @@ get_header(); ?>
 									<div class="entry-fww">
 										<small>Feature</small>
 										<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-										<p><?php the_excerpt(); ?></p>
+										<?php the_excerpt(); ?>
 									</div>
 								</div>
 							</div>
 						<?php endforeach;
 						wp_reset_postdata();?>
 					</div>
-					<div class="row equal-heights" id="equal-heights">
+					<div class="row equal-heights">
 						<?php fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '19' ) ?>
 						<?php fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '18' ) ?>
 					</div>

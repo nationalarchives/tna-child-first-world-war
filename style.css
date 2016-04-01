@@ -33,7 +33,9 @@ Text Domain:    tna-base
 .fww-menu ul li {
     display: inline-block;
     margin: 0;
-    padding: 0 1em;
+    padding: 0 1em 0 1.5em;
+    list-style-image: none;
+    background: url("img/menu-link.png") left center no-repeat;
 }
 .fww-menu ul li a {
     color: #fff;
