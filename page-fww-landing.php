@@ -10,7 +10,7 @@ get_header(); ?>
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<img src="<?php echo get_stylesheet_directory_uri() ?>/img/fww-logo.png">
+							<img src="<?php echo get_stylesheet_directory_uri() ?>/img/fww-logo.png" alt="First World War">
 							<h1>First World War</h1>
 						</div>
 					</div>
@@ -73,14 +73,13 @@ get_header(); ?>
 								for ($i = 0; $i < 1; ++$i) {
 									$atomDate = $data->events[$i]->start->local;
 									$newDate = date('l j M Y, H:i', strtotime($atomDate));
-									echo '<div class="thumb-img"><a href="#"><img src="' . $data->events[$i]->logo->url . '" class="img-responsive"></a></div>';
+									echo '<div class="thumb-img"><a href="#"><img src="' . $data->events[$i]->logo->url . '" class="img-responsive" alt="' . $data->events[$i]->name->text . '"></a></div>';
 									echo '<div class="entry-fww"><small>What&prime;s on</small>';
 									echo '<h2><a href="' . $data->events[$i]->url . '" target="_blank">' . $data->events[$i]->name->text . '</a></h2>';
 									echo '<p>' . $newDate . '<p>';
-									// echo '<p>' . $data->events[$i]->description->text . '<p>';
 								}
 								?>
-								<ul class="child"><li><a href="#">More events</a></li></ul>
+								<ul class="child"><li><a href="#about-our-programme" title="More First World War events">More events</a></li></ul>
 								</div>
 							</div>
 						</div>
@@ -122,7 +121,7 @@ get_header(); ?>
 										<div class="fww-box clearfix">
 											<div class="thumb-img">
 												<a href="#">
-													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/fww-records.jpg" class="img-responsive">
+													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/fww-records.jpg" class="img-responsive" alt="Find your ancestor in our FWW records">
 												</a>
 											</div>
 												<h3><a href="#">Find your ancestor in our FWW records</a></h3>
@@ -133,7 +132,7 @@ get_header(); ?>
 										<div class="fww-box clearfix">
 											<div class="thumb-img">
 												<a href="#">
-													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/online-collection.jpg" class="img-responsive">
+													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/online-collection.jpg" class="img-responsive" alt="Search our online collections">
 												</a>
 											</div>
 												<h3><a href="#">Search our online collections</a></h3>
@@ -152,7 +151,7 @@ get_header(); ?>
 										<div class="fww-box clearfix">
 											<div class="thumb-img">
 												<a href="#">
-													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/unit-diaries.jpg" class="img-responsive">
+													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/unit-diaries.jpg" class="img-responsive" alt="Help us tag our war diaries">
 												</a>
 											</div>
 												<h3><a href="#">Help us tag our war diaries</a></h3>
@@ -175,24 +174,24 @@ get_header(); ?>
 									<div class="col-sm-6">
 										<div class="fww-box clearfix">
 											<div class="thumb-img">
-												<a href="#">
-													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/soldiers-MUN-5_157_1916-1918.jpg" class="img-responsive">
+												<a href="http://www.nationalarchives.gov.uk/education/resources/letters-first-world-war-1915/">
+													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/soldiers-MUN-5_157_1916-1918.jpg" class="img-responsive" alt="Letters from the First World War">
 												</a>
 											</div>
 												<small>Soldiers' letters</small>
-												<h3><a href="#">Telling Tommies' tales</a></h3>
-												<p>Explore soldiers' personal accounts of the First World War using our classroom resource.</p>
+												<h3><a href="http://www.nationalarchives.gov.uk/education/resources/letters-first-world-war-1915/">Letters from the First World War</a></h3>
+												<p>Explore how a group of men from varied backgrounds experienced active service.</p>
 										</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="fww-box clearfix">
 											<div class="thumb-img">
-												<a href="#">
-													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/podcasts-MUN-5_394_40_June-1915.jpg" class="img-responsive">
+												<a href="http://media.nationalarchives.gov.uk/index.php/tag/first-world-war/">
+													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/podcasts-MUN-5_394_40_June-1915.jpg" class="img-responsive" alt="First World War poscasts and videos">
 												</a>
 											</div>
-												<small>Poscasts and videos</small>
-												<h3><a href="#">First World War</a></h3>
+												<small>Media</small>
+												<h3><a href="http://media.nationalarchives.gov.uk/index.php/tag/first-world-war/">First World War poscasts and videos</a></h3>
 												<p>Use our podcasts and videos to help you explore our records of the First World War, from tracing battalions of the British Army to the Women's Land Army.</p>
 										</div>
 									</div>
@@ -211,7 +210,7 @@ get_header(); ?>
 								<div class="entry-content clearfix">
 									<div class="fww-box clearfix">
 										<div class="thumb-img">
-											<img src="<?php echo get_stylesheet_directory_uri() ?>/img/programme-MUN-5_165_1124_48_1_1920.jpg" class="img-responsive">
+											<img src="<?php echo get_stylesheet_directory_uri() ?>/img/programme-MUN-5_165_1124_48_1_1920.jpg" class="img-responsive" alt="About our programme - First World War 100">
 										</div>
 											<h3>First World War 100</h3>
 											<p>We are marking the centenary of the war with an extensive programme, spanning a five-year period between 2014 and 2019.</p>
@@ -228,7 +227,7 @@ get_header(); ?>
 								<div class="entry-content clearfix">
 									<div class="fww-box clearfix">
 										<div class="thumb-img">
-											<img src="<?php echo get_stylesheet_directory_uri() ?>/img/whatson-CAB-45_7_1914.jpg" class="img-responsive">
+											<img src="<?php echo get_stylesheet_directory_uri() ?>/img/whatson-CAB-45_7_1914.jpg" class="img-responsive" alt="First World War 100 events calendar">
 										</div>
 										<h3>Events calendar</h3>
 										<ul>
@@ -236,18 +235,18 @@ get_header(); ?>
 										for ($i = 0; $i < 3; ++$i) {
 											$atomDate = $data->events[$i]->start->local;
 											$newDate = date('l j M Y, H:i', strtotime($atomDate));
-											echo '<li><h4><a href="' . $data->events[$i]->url . '" target="_blank">' . $data->events[$i]->name->text . '</a></h4>';
+											echo '<li><h4><a href="' . $data->events[$i]->url . '" title="External website - link opens in a new window" target="_blank">' . $data->events[$i]->name->text . '</a></h4>';
 											echo '<p>' . $newDate . '<p></li>';
 										}
 										?>
 										</ul>
-										<ul class="child"><li><a href="#">More events</a></li></ul>
+										<ul class="child"><li><a href="http://www.eventbrite.co.uk/o/the-national-archives-2226699547" title="External website, The National Archives' Eventbrite page - link opens in a new window" target="_blank">More events</a></li></ul>
 										<h3>Nationwide centenary activity</h3>
 										<p>First World War centenary events will be taking place across the UK over the next four years.</p>
 										<ul class="urls">
-											<li><a href="#">Government commemoration plans</a></li>
-											<li><a href="#">First World War Centenary Partnership</a></li>
-											<li><a href="#">Events near you</a></li>
+											<li><a href="https://www.gov.uk/government/topical-events/first-world-war-centenary" title="External website - link opens in a new window" target="_blank">Government commemoration plans</a></li>
+											<li><a href="http://www.1914.org/partnership/" title="External website - link opens in a new window" target="_blank">First World War Centenary Partnership</a></li>
+											<li><a href="http://www.1914.org/" title="External website - link opens in a new window" target="_blank">Events near you</a></li>
 										</ul>
 									</div>
 								</div>
@@ -261,10 +260,13 @@ get_header(); ?>
 								<div class="entry-content clearfix">
 									<div class="fww-box clearfix">
 										<div class="thumb-img">
-												<img src="<?php echo get_stylesheet_directory_uri() ?>/img/tnabookshop.jpg" class="img-responsive">
+												<img src="<?php echo get_stylesheet_directory_uri() ?>/img/tnabookshop.jpg" class="img-responsive" alt="Visit The National Archives Bookshop at Kew">
 										</div>
 											<h3>Opening hours</h3>
 											<p>Visit The National Archives Bookshop at Kew.<br>Open 09:00-17:00 Tuesday to Saturday.</p>
+											<h4>First World War nurses</h4>
+											<p>From the beginning of the First World War, a range of women volunteered as nurses working close to the front line. <a href="http://bookshop.nationalarchives.gov.uk/theme/WWInurses/">Read their stories</a>, touching, funny, and harrowing by turns.</p>
+											<ul class="child"><li><a href="http://bookshop.nationalarchives.gov.uk/store/filtered/6/c_28/">Find more at our Bookshop</a></li></ul>
 									</div>
 								</div>
 							</article>

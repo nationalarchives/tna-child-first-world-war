@@ -11,9 +11,6 @@ License URI:    license.txt
 Text Domain:    tna-base
 */
 
-.tna-breadcrumb {
-    margin-top: 0;
-}
 .fww .banner {
     background: url("img/fww-banner-bg.jpg") #ddd;
     background-size: cover;
@@ -76,4 +73,16 @@ article .entry-header h1, article .entry-header h2, aside .sidebar-header h2 {
 }
 a:active, a:link, a:visited {
     color: #6e1608;
+}
+.tna-breadcrumb {
+    margin-top: 0;
+}
+.breadcrumbs {
+    display: inline-block;
+    color: #fff;
+    padding: 3px 7px;
+    background-color: rgba(0,0,0,.5);
+}
+.breadcrumbs a:active, .breadcrumbs a:link, .breadcrumbs a:visited {
+    color: #fff;
 }
