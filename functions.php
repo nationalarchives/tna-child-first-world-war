@@ -37,12 +37,15 @@ function tna_child_styles() {
 add_action( 'wp_enqueue_scripts', 'tna_child_styles' );
 
 function tna_child_scripts() {
-        wp_register_script( 'equal-heights', get_template_directory_uri() . '/js/jQuery.equalHeights.js', array(),
-            EDD_VERSION, true );
-        wp_register_script( 'equal-heights-var', get_template_directory_uri() . '/js/equalHeights.js', array(),
-            EDD_VERSION, true );
-        wp_enqueue_script( 'equal-heights' );
-        wp_enqueue_script( 'equal-heights-var' );
+    wp_register_script( 'equal-heights', get_template_directory_uri() . '/js/jQuery.equalHeights.js', array(),
+        EDD_VERSION, true );
+    wp_register_script( 'equal-heights-var', get_template_directory_uri() . '/js/equalHeights.js', array(),
+        EDD_VERSION, true );
+    wp_register_script( 'tna-fww', get_stylesheet_directory_uri() . '/tna-fww.js', array(),
+    EDD_VERSION, true );
+    wp_enqueue_script( 'equal-heights' );
+    wp_enqueue_script( 'equal-heights-var' );
+    wp_enqueue_script( 'tna-fww' );
 }
 add_action( 'wp_enqueue_scripts', 'tna_child_scripts' );
 
