@@ -16,7 +16,7 @@ function tnatheme_globals() {
         $pre_path = '/first-world-war';
     }
 }
-if ( ! $_SERVER['SERVER_ADDR'] == $_SERVER['REMOTE_ADDR'] ) {
+if ( $_SERVER['SERVER_ADDR'] !== $_SERVER['REMOTE_ADDR'] ) {
     tnatheme_globals();
 }
 
