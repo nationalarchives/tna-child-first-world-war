@@ -64,7 +64,7 @@ get_header(); ?>
 							<div id="event" class="card">
 								<div class="entry-thumbnail">
 									<a href="#about-our-programme">
-										<img src="<?php echo str_replace( home_url(), '', get_stylesheet_directory_uri() ) ?>/img/thumb-news.jpg">
+										<img src="<?php echo str_replace( home_url(), '', get_stylesheet_directory_uri() ) ?>/img/thumb-news.jpg" alt="First World War events">
 									</a>
 								</div>
 								<div class="entry-content">
@@ -98,8 +98,8 @@ get_header(); ?>
 						wp_reset_postdata();?>
 					</div>
 					<div class="row equal-heights">
-						<?php fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '22' ) ?>
-						<?php fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '23' ) ?>
+						<?php fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '1' ) ?>
+						<?php fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '2' ) ?>
 					</div>
 				</section>
 				<section id="explore-our-records">
