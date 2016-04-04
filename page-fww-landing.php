@@ -53,8 +53,12 @@ get_header(); ?>
 							</form>
 						</div>
 						<div class="col-sm-2">
-							<span class="sprite icon-facebook pull-right"></span>
-							<span class="sprite icon-twitter pull-right"></span>
+							<a href="http://www.facebook.com/TheNationalArchives" target="_blank" title="External website Facebook - link opens in a new window">
+								<span class="sprite icon-facebook pull-right"></span>
+							</a>
+							<a href="https://twitter.com/UkNatArchives" target="_blank" title="External website Twitter - link opens in a new window">
+								<span class="sprite icon-twitter pull-right"></span>
+							</a>
 						</div>
 					</div>
 				</section>
