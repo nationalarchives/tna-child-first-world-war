@@ -43,9 +43,11 @@ function tna_child_scripts() {
         EDD_VERSION, true );
     wp_register_script( 'tna-fww', get_stylesheet_directory_uri() . '/tna-fww.js', array(),
     EDD_VERSION, true );
+    wp_register_script('moment-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js');
     wp_enqueue_script( 'equal-heights' );
     wp_enqueue_script( 'equal-heights-var' );
     wp_enqueue_script( 'tna-fww' );
+    wp_enqueue_script( 'moment-js' );
 }
 add_action( 'wp_enqueue_scripts', 'tna_child_scripts' );
 
@@ -87,13 +89,13 @@ function fww_rss( $rssUrl, $id ) {
                 $dc         = $item->children( $namespaces['dc'] );
                 $pubDate    = $item->pubDate;
                 $pubDate    = date( "l d M Y", strtotime( $pubDate ) );
-                $html = '<div class="col-md-6"><div class="fww-box clearfix">';
+                $html = '<div class="col-md-6"><div class="card">';
                 if ( $enclosure ) {
-                    $html .= '<div class="thumb-img"><a href="' . $item->link . '" title="' . $item->title . '"">';
+                    $html .= '<div class="entry-thumbnail"><a href="' . $item->link . '" title="' . $item->title . '"">';
                     $html .= '<img src="' . $enclosure . '" class="img-responsive" alt="' . $item->title . '">';
                     $html .= '</a></div>';
                 }
-                $html .= '<div class="entry-fww"><small>Blog</small><h2><a href="' . $item->link . '">';
+                $html .= '<div class="entry-content"><small>Blog</small><h2><a href="' . $item->link . '">';
                 $html .= $item->title;
                 $html .= '</a></h2>';
                 $html .= '<small>' . $dc->creator . ' | ' . $pubDate . '</small>';
@@ -136,13 +138,13 @@ function fww_news_rss( $rssUrlNews, $id ) {
                 $pubDate    = date( "l d M Y", strtotime( $pubDate ) );
                 $img        = str_replace( home_url(), '', get_stylesheet_directory_uri() ) . '/img/thumb-news.jpg';
                 $link       = str_replace( 'livelb', 'www', $item->link );
-                $html = '<div class="col-md-6"><div class="fww-box clearfix">';
+                $html = '<div class="col-md-6"><div class="card clearfix">';
                 if ( $img ) {
-                    $html .= '<div class="thumb-img"><a href="' . $link . '" title="' . $item->title . '"">';
+                    $html .= '<div class="entry-thumbnail"><a href="' . $link . '" title="' . $item->title . '"">';
                     $html .= '<img src="' . $img . '" class="img-responsive" alt="' . $item->title . '">';
                     $html .= '</a></div>';
                 }
-                $html .= '<div class="entry-fww"><small>News</small><h2><a href="' . $link . '">';
+                $html .= '<div class="entry-content"><small>News</small><h2><a href="' . $link . '">';
                 $html .= $item->title;
                 $html .= '</a></h2>';
                 $html .= '<small>' . $dc->creator . ' | ' . $pubDate . '</small>';

@@ -16,9 +16,11 @@ Text Domain:    tna-base
     background-size: cover;
 }
 .fww .banner h1 {
-    font-size: 400%;
     color: #fff;
     text-shadow: 2px 2px 8px #000;
+}
+.fww .banner img {
+    margin: 0 auto;
 }
 .fww-menu {
     padding: 0.4em 0;
@@ -40,6 +42,13 @@ Text Domain:    tna-base
 .fww-menu ul li a {
     color: #fff;
 }
+ul.events {
+    margin: 0 1em;
+}
+ul.child li {
+    width: 100%;
+    margin-right: 0;
+}
 .connect h2 {
     margin: 0;
     line-height: 50px;
@@ -54,21 +63,6 @@ Text Domain:    tna-base
 }
 .connect #Email {
     height: 40px;
-}
-.fww-box {
-    background: #fff;
-    margin-bottom: 1em;
-}
-.fww-box .entry-fww {
-    padding: 0 1em;
-}
-.thumb-img {
-    max-height: 173px;
-    overflow: hidden;
-}
-.thumb-img img {
-    width: 100%;
-    height: auto;
 }
 article .entry-header h1, article .entry-header h2, aside .sidebar-header h2 {
     background-color: #6e1608;
@@ -87,4 +81,20 @@ a:active, a:link, a:visited {
 }
 .home .breadcrumbs a:active, .home .breadcrumbs a:link, .home .breadcrumbs a:visited {
     color: #fff;
+}
+/* Card styles */
+.card {
+    background: #fff;
+    margin-bottom: 1em;
+}
+.card .entry-content {
+    padding: 0 1em;
+}
+.card .entry-thumbnail {
+    height: 173px;
+    overflow: hidden;
+}
+.card .entry-thumbnail img {
+    width: 100%;
+    height: auto;
 }
