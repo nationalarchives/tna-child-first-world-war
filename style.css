@@ -16,6 +16,7 @@ Text Domain:    tna-base
     background-size: cover;
 }
 .fww .banner h1 {
+    font-size: 300%;
     color: #fff;
     text-shadow: 2px 2px 8px #000;
 }
