@@ -43,9 +43,11 @@ function tna_child_scripts() {
         EDD_VERSION, true );
     wp_register_script( 'tna-fww', get_stylesheet_directory_uri() . '/tna-fww.js', array(),
     EDD_VERSION, true );
+    wp_register_script('moment-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js');
     wp_enqueue_script( 'equal-heights' );
     wp_enqueue_script( 'equal-heights-var' );
     wp_enqueue_script( 'tna-fww' );
+    wp_enqueue_script( 'moment-js' );
 }
 add_action( 'wp_enqueue_scripts', 'tna_child_scripts' );
 

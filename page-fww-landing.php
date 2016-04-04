@@ -61,24 +61,20 @@ get_header(); ?>
 				<section class="featured">
 					<div class="row equal-heights">
 						<div class="col-sm-4">
-							<div class="card">
-								<?php
-								$url = 'https://www.eventbriteapi.com/v3/events/search/?q=first+world+war&sort_by=date&organizer.id=2226699547&token=5VVFLKAPZUXJSKQ3QTBG';
-								$json = file_get_contents($url);
-								$data = json_decode($json);
-								date_default_timezone_set('Europe/London');
-								for ($i = 0; $i < 1; ++$i) {
-									$atomDate = $data->events[$i]->start->local;
-									$newDate = date('l j M Y, H:i', strtotime($atomDate));
-									echo '<div class="entry-thumbnail"><a href="#"><img src="' . $data->events[$i]->logo->url . '" class="img-responsive" alt="' . $data->events[$i]->name->text . '"></a></div>';
-									echo '<div class="entry-content"><small>What&prime;s on</small>';
-									echo '<h2><a href="' . $data->events[$i]->url . '" target="_blank">' . $data->events[$i]->name->text . '</a></h2>';
-									echo '<p>' . $newDate . '<p>';
-								}
-								?>
-								<ul class="child"><li><a href="#about-our-programme" title="More First World War events">More events</a></li></ul>
+							<div id="event" class="card">
+								<div class="entry-thumbnail">
+									<a href="#about-our-programme">
+										<img src="<?php echo str_replace( home_url(), '', get_stylesheet_directory_uri() ) ?>/img/thumb-news.jpg">
+									</a>
+								</div>
+								<div class="entry-content">
+									<small>What&prime;s on</small>
+									<h2>First World War events</h2>
 								</div>
 							</div>
+							<ul class="child events">
+								<li><a href="#about-our-programme" title="More First World War events">More events</a></li>
+							</ul>
 						</div>
 						<?php
 						$args = array( 'posts_per_page' => 2, 'post_type' => 'page', 'category_name' => 'feature' );
@@ -236,16 +232,17 @@ get_header(); ?>
 											<img src="<?php echo get_stylesheet_directory_uri() ?>/img/whatson-CAB-45_7_1914.jpg" class="img-responsive" alt="First World War 100 events calendar">
 										</div>
 										<h3>Events calendar</h3>
-										<ul>
+										<div id="event-list"></div>
+										<!--<ul>
 										<?php
-										for ($i = 0; $i < 3; ++$i) {
+/*										for ($i = 0; $i < 3; ++$i) {
 											$atomDate = $data->events[$i]->start->local;
 											$newDate = date('l j M Y, H:i', strtotime($atomDate));
 											echo '<li><h4><a href="' . $data->events[$i]->url . '" title="External website - link opens in a new window" target="_blank">' . $data->events[$i]->name->text . '</a></h4>';
 											echo '<p>' . $newDate . '<p></li>';
 										}
-										?>
-										</ul>
+										*/?>
+										</ul>-->
 										<ul class="child"><li><a href="http://www.eventbrite.co.uk/o/the-national-archives-2226699547" title="External website, The National Archives' Eventbrite page - link opens in a new window" target="_blank">More events</a></li></ul>
 										<h3>Nationwide centenary activity</h3>
 										<p>First World War centenary events will be taking place across the UK over the next four years.</p>

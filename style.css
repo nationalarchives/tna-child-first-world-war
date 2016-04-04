@@ -42,6 +42,13 @@ Text Domain:    tna-base
 .fww-menu ul li a {
     color: #fff;
 }
+ul.events {
+    margin: 0 1em;
+}
+ul.child li {
+    width: 100%;
+    margin-right: 0;
+}
 .connect h2 {
     margin: 0;
     line-height: 50px;
