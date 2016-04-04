@@ -233,16 +233,6 @@ get_header(); ?>
 										</div>
 										<h3>Events calendar</h3>
 										<div id="event-list"></div>
-										<!--<ul>
-										<?php
-/*										for ($i = 0; $i < 3; ++$i) {
-											$atomDate = $data->events[$i]->start->local;
-											$newDate = date('l j M Y, H:i', strtotime($atomDate));
-											echo '<li><h4><a href="' . $data->events[$i]->url . '" title="External website - link opens in a new window" target="_blank">' . $data->events[$i]->name->text . '</a></h4>';
-											echo '<p>' . $newDate . '<p></li>';
-										}
-										*/?>
-										</ul>-->
 										<ul class="child"><li><a href="http://www.eventbrite.co.uk/o/the-national-archives-2226699547" title="External website, The National Archives' Eventbrite page - link opens in a new window" target="_blank">More events</a></li></ul>
 										<h3>Nationwide centenary activity</h3>
 										<p>First World War centenary events will be taking place across the UK over the next four years.</p>
