@@ -91,7 +91,7 @@ function fww_rss( $rssUrl, $id ) {
                 $pubDate    = date( "l d M Y", strtotime( $pubDate ) );
                 $html = '<div class="col-md-6"><div class="card">';
                 if ( $enclosure ) {
-                    $html .= '<div class="entry-thumbnail"><a href="' . $item->link . '" title="' . $item->title . '"">';
+                    $html .= '<div class="entry-thumbnail"><a href="' . $item->link . '" title="' . $item->title . '">';
                     $html .= '<img src="' . $enclosure . '" class="img-responsive" alt="' . $item->title . '">';
                     $html .= '</a></div>';
                 }
@@ -140,7 +140,7 @@ function fww_news_rss( $rssUrlNews, $id ) {
                 $link       = str_replace( 'livelb', 'www', $item->link );
                 $html = '<div class="col-md-6"><div class="card clearfix">';
                 if ( $img ) {
-                    $html .= '<div class="entry-thumbnail"><a href="' . $link . '" title="' . $item->title . '"">';
+                    $html .= '<div class="entry-thumbnail"><a href="' . $link . '" title="' . $item->title . '">';
                     $html .= '<img src="' . $img . '" class="img-responsive" alt="' . $item->title . '">';
                     $html .= '</a></div>';
                 }

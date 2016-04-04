@@ -10,7 +10,7 @@ get_header(); ?>
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<img src="<?php echo get_stylesheet_directory_uri() ?>/img/fww-logo.png" alt="First World War" class="img-responsive">
+							<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/fww-logo.png" alt="First World War" class="img-responsive">
 							<h1>First World War</h1>
 						</div>
 					</div>
@@ -53,8 +53,12 @@ get_header(); ?>
 							</form>
 						</div>
 						<div class="col-sm-2">
-							<span class="sprite icon-facebook pull-right"></span>
-							<span class="sprite icon-twitter pull-right"></span>
+							<a href="http://www.facebook.com/TheNationalArchives" target="_blank" title="External website Facebook - link opens in a new window">
+								<span class="sprite icon-facebook pull-right"></span>
+							</a>
+							<a href="https://twitter.com/UkNatArchives" target="_blank" title="External website Twitter - link opens in a new window">
+								<span class="sprite icon-twitter pull-right"></span>
+							</a>
 						</div>
 					</div>
 				</section>
@@ -64,7 +68,7 @@ get_header(); ?>
 							<div id="event" class="card">
 								<div class="entry-thumbnail">
 									<a href="#about-our-programme">
-										<img src="<?php echo str_replace( home_url(), '', get_stylesheet_directory_uri() ) ?>/img/thumb-news.jpg">
+										<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/thumb-news.jpg" alt="First World War events">
 									</a>
 								</div>
 								<div class="entry-content">
@@ -83,13 +87,13 @@ get_header(); ?>
 							<div class="col-sm-4">
 								<div class="card">
 									<div class="entry-thumbnail">
-										<a href="<?php the_permalink(); ?>">
-											<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+										<a href="<?php echo make_path_relative( get_page_link() ); ?>">
+											<?php echo make_path_relative( get_the_post_thumbnail( $post->ID, 'large' ) ); ?>
 										</a>
 									</div>
 									<div class="entry-content">
 										<small>Feature</small>
-										<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+										<h2><a href="<?php echo make_path_relative( get_page_link() ); ?>"><?php the_title(); ?></a></h2>
 										<?php the_excerpt(); ?>
 									</div>
 								</div>
@@ -98,8 +102,8 @@ get_header(); ?>
 						wp_reset_postdata();?>
 					</div>
 					<div class="row equal-heights">
-						<?php fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '22' ) ?>
-						<?php fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '23' ) ?>
+						<?php make_path_relative( fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '1' ) ) ?>
+						<?php make_path_relative( fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '2' ) ) ?>
 					</div>
 				</section>
 				<section id="explore-our-records">
@@ -112,9 +116,9 @@ get_header(); ?>
 								<div class="entry-content clearfix">
 									<div class="col-sm-4">
 										<div class="fww-box clearfix">
-											<div class="thumb-img">
+											<div class="entry-thumbnail">
 												<a href="#">
-													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/fww-records.jpg" class="img-responsive" alt="Find your ancestor in our FWW records">
+													<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/fww-records.jpg" class="img-responsive" alt="Find your ancestor in our FWW records">
 												</a>
 											</div>
 												<h3><a href="#">Find your ancestor in our FWW records</a></h3>
@@ -123,39 +127,39 @@ get_header(); ?>
 									</div>
 									<div class="col-sm-4">
 										<div class="fww-box clearfix">
-											<div class="thumb-img">
+											<div class="entry-thumbnail">
 												<a href="first-world-war/centenary-digitised-records/">
-													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/online-collection.jpg" class="img-responsive" alt="Search our online collections">
+													<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/online-collection.jpg" class="img-responsive" alt="Search our online collections">
 												</a>
 											</div>
-												<h3><a href="first-world-war/centenary-digitised-records/">Browse our online collections</a></h3>
-												<p>We hold a vast collection of documents, letters, diaries, maps and photographs from the First World War, many of which have been digitised.</p>
-												<form>
-													<select name="research-category" id="research-category" class="margin-right-medium">
-														<option value="0">Select a subject</option>
-														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/?research-category=first-world-war&sub-category%5B%5D=medals-and-awards&res-online=1">Medals</option>
-														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/raf-officers-service-records-1918-1919/">RAF officers</option>
-														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-seamens-campaign-medal-records-1914-1918/">Merchant seamen</option>
-														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-nurses-service-records-1914-1918/">Army nurses</option>
-														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/prisoner-of-war-interview-reports-1914-1918/">Prisoners of war</option>
-														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-naval-volunteer-reserve-service-records-1903-1922/">Royal Naval Volunteer Reserve</option>
-														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-naval-division-service-records-1914-1919/">Royal Naval Division</option>
-														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/womens-royal-air-force-service-records-1918-1920/">Women's Royal Air Force</option>
-														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/womens-royal-naval-service-records-1917-1919/">Women's Royal Naval Service</option>
-														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-naval-air-service-officers-service-records-1906-1918/">Royal Naval Air Service</option>
-														<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/middlesex-military-service-appeal-tribunal-1916-1918/">Conscription appeals</option>
-													</select>
-												</form>
+											<h3><a href="first-world-war/centenary-digitised-records/">Browse our online collections</a></h3>
+											<p>We hold a vast collection of documents, letters, diaries, maps and photographs from the First World War, many of which have been digitised.</p>
+											<form>
+												<select name="research-category" id="research-category" class="margin-right-medium">
+													<option value="0">Select a subject</option>
+													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/?research-category=first-world-war&sub-category%5B%5D=medals-and-awards&res-online=1">Medals</option>
+													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/raf-officers-service-records-1918-1919/">RAF officers</option>
+													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-seamens-campaign-medal-records-1914-1918/">Merchant seamen</option>
+													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-nurses-service-records-1914-1918/">Army nurses</option>
+													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/prisoner-of-war-interview-reports-1914-1918/">Prisoners of war</option>
+													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-naval-volunteer-reserve-service-records-1903-1922/">Royal Naval Volunteer Reserve</option>
+													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-naval-division-service-records-1914-1919/">Royal Naval Division</option>
+													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/womens-royal-air-force-service-records-1918-1920/">Women's Royal Air Force</option>
+													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/womens-royal-naval-service-records-1917-1919/">Women's Royal Naval Service</option>
+													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-naval-air-service-officers-service-records-1906-1918/">Royal Naval Air Service</option>
+													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/middlesex-military-service-appeal-tribunal-1916-1918/">Conscription appeals</option>
+												</select>
+											</form>
 										</div>
 									</div>
 									<div class="col-sm-4">
 										<div class="fww-box clearfix">
-											<div class="thumb-img">
+											<div class="entry-thumbnail">
 												<a href="http://www.operationwardiary.org/">
-													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/unit-diaries.jpg" class="img-responsive" alt="Help us tag our war diaries">
+													<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/unit-diaries.jpg" class="img-responsive" alt="Help us tag our war diaries">
 												</a>
 											</div>
-												<h3><a href="http://www.operationwardiary.org/">Help us tag our war diaries</a></h3>
+											<h3><a href="http://www.operationwardiary.org/">Help us tag our war diaries</a></h3>
 											<p>Operation War Diary is an exciting new crowdsourcing project – help us to unlock the data in our war diaries.</p>
 											<p>Find out more about <a title="Find out more about crowdsourcing and Operation War Diary" href="http://blog.nationalarchives.gov.uk/blog/operation-war-diary-archive-needs/">crowdsourcing and Operation War Diary</a> or simply go to the website and <a title="External website - link opens in a new window" href="http://www.operationwardiary.org/" target="_blank">start tagging</a>.</p>
 										</div>
@@ -175,26 +179,26 @@ get_header(); ?>
 								<div class="entry-content clearfix">
 									<div class="col-sm-6">
 										<div class="fww-box clearfix">
-											<div class="thumb-img">
+											<div class="entry-thumbnail">
 												<a href="http://www.nationalarchives.gov.uk/education/resources/letters-first-world-war-1915/">
-													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/soldiers-MUN-5_157_1916-1918.jpg" class="img-responsive" alt="Letters from the First World War">
+													<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/soldiers-MUN-5_157_1916-1918.jpg" class="img-responsive" alt="Letters from the First World War">
 												</a>
 											</div>
-												<small>Soldiers' letters</small>
-												<h3><a href="http://www.nationalarchives.gov.uk/education/resources/letters-first-world-war-1915/">Letters from the First World War</a></h3>
-												<p>Explore how a group of men from varied backgrounds experienced active service.</p>
+											<small>Soldiers' letters</small>
+											<h3><a href="http://www.nationalarchives.gov.uk/education/resources/letters-first-world-war-1915/">Letters from the First World War</a></h3>
+											<p>Explore how a group of men from varied backgrounds experienced active service.</p>
 										</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="fww-box clearfix">
-											<div class="thumb-img">
+											<div class="entry-thumbnail">
 												<a href="http://media.nationalarchives.gov.uk/index.php/tag/first-world-war/">
-													<img src="<?php echo get_stylesheet_directory_uri() ?>/img/podcasts-MUN-5_394_40_June-1915.jpg" class="img-responsive" alt="First World War poscasts and videos">
+													<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/podcasts-MUN-5_394_40_June-1915.jpg" class="img-responsive" alt="First World War poscasts and videos">
 												</a>
 											</div>
-												<small>Media</small>
-												<h3><a href="http://media.nationalarchives.gov.uk/index.php/tag/first-world-war/">First World War poscasts and videos</a></h3>
-												<p>Use our podcasts and videos to help you explore our records of the First World War, from tracing battalions of the British Army to the Women's Land Army.</p>
+											<small>Media</small>
+											<h3><a href="http://media.nationalarchives.gov.uk/index.php/tag/first-world-war/">First World War poscasts and videos</a></h3>
+											<p>Use our podcasts and videos to help you explore our records of the First World War, from tracing battalions of the British Army to the Women's Land Army.</p>
 										</div>
 									</div>
 								</div>
@@ -211,12 +215,12 @@ get_header(); ?>
 								</div>
 								<div class="entry-content clearfix">
 									<div class="fww-box clearfix">
-										<div class="thumb-img">
-											<img src="<?php echo get_stylesheet_directory_uri() ?>/img/programme-MUN-5_165_1124_48_1_1920.jpg" class="img-responsive" alt="About our programme - First World War 100">
+										<div class="entry-thumbnail">
+											<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/programme-MUN-5_165_1124_48_1_1920.jpg" class="img-responsive" alt="About our programme - First World War 100">
 										</div>
-											<h3>First World War 100</h3>
-											<p>We are marking the centenary of the war with an extensive programme, spanning a five-year period between 2014 and 2019.</p>
-											<p>Find out more about our programme, which explores major anniversaries and key aspects of the war through themes such as technology and the Middle East.</p>
+										<h3>First World War 100</h3>
+										<p>We are marking the centenary of the war with an extensive programme, spanning a five-year period between 2014 and 2019.</p>
+										<p>Find out more about our programme, which explores major anniversaries and key aspects of the war through themes such as technology and the Middle East.</p>
 									</div>
 								</div>
 							</article>
@@ -228,21 +232,11 @@ get_header(); ?>
 								</div>
 								<div class="entry-content clearfix">
 									<div class="fww-box clearfix">
-										<div class="thumb-img">
-											<img src="<?php echo get_stylesheet_directory_uri() ?>/img/whatson-CAB-45_7_1914.jpg" class="img-responsive" alt="First World War 100 events calendar">
+										<div class="entry-thumbnail">
+											<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/whatson-CAB-45_7_1914.jpg" class="img-responsive" alt="First World War 100 events calendar">
 										</div>
 										<h3>Events calendar</h3>
 										<div id="event-list"></div>
-										<!--<ul>
-										<?php
-/*										for ($i = 0; $i < 3; ++$i) {
-											$atomDate = $data->events[$i]->start->local;
-											$newDate = date('l j M Y, H:i', strtotime($atomDate));
-											echo '<li><h4><a href="' . $data->events[$i]->url . '" title="External website - link opens in a new window" target="_blank">' . $data->events[$i]->name->text . '</a></h4>';
-											echo '<p>' . $newDate . '<p></li>';
-										}
-										*/?>
-										</ul>-->
 										<ul class="child"><li><a href="http://www.eventbrite.co.uk/o/the-national-archives-2226699547" title="External website, The National Archives' Eventbrite page - link opens in a new window" target="_blank">More events</a></li></ul>
 										<h3>Nationwide centenary activity</h3>
 										<p>First World War centenary events will be taking place across the UK over the next four years.</p>
@@ -262,14 +256,12 @@ get_header(); ?>
 								</div>
 								<div class="entry-content clearfix">
 									<div class="fww-box clearfix">
-										<div class="thumb-img">
-												<img src="<?php echo get_stylesheet_directory_uri() ?>/img/tnabookshop.jpg" class="img-responsive" alt="Visit The National Archives Bookshop at Kew">
+										<div class="entry-thumbnail">
+											<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/tnabookshop.jpg" class="img-responsive" alt="Visit The National Archives Bookshop at Kew">
 										</div>
-											<h3>Opening hours</h3>
-											<p>Visit The National Archives Bookshop at Kew.<br>Open 09:00-17:00 Tuesday to Saturday.</p>
-											<h4>First World War nurses</h4>
-											<p>From the beginning of the First World War, a range of women volunteered as nurses working close to the front line. <a href="http://bookshop.nationalarchives.gov.uk/theme/WWInurses/">Read their stories</a>, touching, funny, and harrowing by turns.</p>
-											<ul class="child"><li><a href="http://bookshop.nationalarchives.gov.uk/store/filtered/6/c_28/">Find more at our Bookshop</a></li></ul>
+										<h4>First World War nurses</h4>
+										<p>From the beginning of the First World War, a range of women volunteered as nurses working close to the front line. <a href="http://bookshop.nationalarchives.gov.uk/theme/WWInurses/">Read their stories</a>, touching, funny, and harrowing by turns.</p>
+										<ul class="child"><li><a href="http://bookshop.nationalarchives.gov.uk/store/filtered/6/c_28/">Find more at our Bookshop</a></li></ul>
 									</div>
 								</div>
 							</article>
