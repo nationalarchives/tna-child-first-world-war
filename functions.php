@@ -65,7 +65,7 @@ function category_archives( $wp_query ) {
         $wp_query->set( 'post_type', $my_post_array );
 }
 
-// Dynamic content via RSS feeds
+// Dynamic blog content via RSS feed
 function fww_rss( $rssUrl, $id ) {
     // Do we have this information in our transients already?
     $transient = get_transient( 'tna_rss_blog_transient' . $id );
@@ -107,12 +107,12 @@ function fww_rss( $rssUrl, $id ) {
             echo $html;
         }
         else {
-            echo '<p>No content</p>';
+            echo '<div class="col-md-6"><div class="card"><div class="entry-content"><h2>First World War blog</h2><ul class="child"><li><a href="http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/">Join us on our blog</a></li></ul></div></div></div>';
         }
     }
 }
 
-// Dynamic content via RSS feeds
+// Dynamic news content via RSS feed
 function fww_news_rss( $rssUrlNews, $id ) {
     // Do we have this information in our transients already?
     $transient_news = get_transient( 'tna_rss_news_transient' . $id );
@@ -158,7 +158,7 @@ function fww_news_rss( $rssUrlNews, $id ) {
             echo $html;
         }
         else {
-            echo '<p>No content</p>';
+            echo '<div class="col-md-6"><div class="card"><div class="entry-content"><h2>First World War news</h2><ul class="child"><li><a href="http://www.nationalarchives.gov.uk/about/news/?news-tag=first-world-war&news-view=child">Join us on our news page</a></li></ul></div></div></div>';
         }
     }
 }
