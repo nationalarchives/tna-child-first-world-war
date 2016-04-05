@@ -54,10 +54,10 @@ get_header(); ?>
 						</div>
 						<div class="col-sm-2">
 							<a href="http://www.facebook.com/TheNationalArchives" target="_blank" title="External website Facebook - link opens in a new window">
-								<span class="sprite icon-facebook pull-right"></span>
+								<span class="sprite icon-facebook"></span>
 							</a>
 							<a href="https://twitter.com/UkNatArchives" target="_blank" title="External website Twitter - link opens in a new window">
-								<span class="sprite icon-twitter pull-right"></span>
+								<span class="sprite icon-twitter"></span>
 							</a>
 						</div>
 					</div>
@@ -65,7 +65,7 @@ get_header(); ?>
 				<section class="featured">
 					<div class="row equal-heights">
 						<div class="col-sm-4">
-							<div id="event" class="card">
+							<div id="event" class="card clearfix">
 								<div class="entry-thumbnail">
 									<a href="#about-our-programme">
 										<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/thumb-news.jpg" alt="First World War events">
@@ -74,18 +74,18 @@ get_header(); ?>
 								<div class="entry-content">
 									<small>What&prime;s on</small>
 									<h2>First World War events</h2>
+									<ul>
+										<li><a href="#about-our-programme" title="More First World War events">More events</a></li>
+									</ul>
 								</div>
 							</div>
-							<ul class="child events">
-								<li><a href="#about-our-programme" title="More First World War events">More events</a></li>
-							</ul>
 						</div>
 						<?php
 						$args = array( 'posts_per_page' => 2, 'post_type' => 'page', 'category_name' => 'feature' );
 						$fwwposts = get_posts( $args );
 						foreach ( $fwwposts as $post ) : setup_postdata( $post ); ?>
 							<div class="col-sm-4">
-								<div class="card">
+								<div class="card clearfix">
 									<div class="entry-thumbnail">
 										<a href="<?php echo make_path_relative( get_page_link() ); ?>">
 											<?php echo make_path_relative( get_the_post_thumbnail( $post->ID, 'large' ) ); ?>
@@ -102,8 +102,8 @@ get_header(); ?>
 						wp_reset_postdata();?>
 					</div>
 					<div class="row equal-heights">
-						<?php make_path_relative( fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '1' ) ) ?>
-						<?php make_path_relative( fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '2' ) ) ?>
+						<?php make_path_relative( fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '5' ) ) ?>
+						<?php make_path_relative( fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '6' ) ) ?>
 					</div>
 				</section>
 				<section id="explore-our-records">
