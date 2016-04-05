@@ -38,7 +38,7 @@ Text Domain:    tna-base
     margin: 0;
     padding: 0 1em 0 1.5em;
     list-style-image: none;
-    background: url("img/menu-link.png") left center no-repeat;
+    background: url(img/menu-link.png) left center no-repeat;
 }
 .fww-menu ul li a {
     color: #fff;
@@ -65,7 +65,11 @@ ul.child li {
 .connect #Email {
     height: 40px;
 }
-article .entry-header h1, article .entry-header h2, aside .sidebar-header h2 {
+article .entry-header h1 {
+    background: url(img/logo-page.png) #6e1608 no-repeat 5px 3px;
+    padding-left: 110px;
+}
+article .entry-header h2, aside .sidebar-header h2 {
     background-color: #6e1608;
 }
 a:active, a:link, a:visited {

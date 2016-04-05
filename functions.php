@@ -17,7 +17,11 @@ function tnatheme_globals() {
     }
 }
 if ( $_SERVER['SERVER_ADDR'] !== $_SERVER['REMOTE_ADDR'] ) {
-    tnatheme_globals();
+    tnatheme_globals(); } else {
+    $pre_path = '';
+    $pre_crumbs = array(
+        'First World War' => '/'
+    );
 }
 
 function dequeue_parent_style() {
