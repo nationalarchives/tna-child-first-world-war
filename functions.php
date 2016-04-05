@@ -41,16 +41,16 @@ function tna_child_styles() {
 add_action( 'wp_enqueue_scripts', 'tna_child_styles' );
 
 function tna_child_scripts() {
+    wp_register_script( 'tna-fww', get_stylesheet_directory_uri() . '/tna-fww.js', array(),
+        EDD_VERSION, true );
     wp_register_script( 'equal-heights', get_template_directory_uri() . '/js/jQuery.equalHeights.js', array(),
         EDD_VERSION, true );
     wp_register_script( 'equal-heights-var', get_template_directory_uri() . '/js/equalHeights.js', array(),
         EDD_VERSION, true );
-    wp_register_script( 'tna-fww', get_stylesheet_directory_uri() . '/tna-fww.js', array(),
-    EDD_VERSION, true );
     wp_register_script('moment-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js');
+    wp_enqueue_script( 'tna-fww' );
     wp_enqueue_script( 'equal-heights' );
     wp_enqueue_script( 'equal-heights-var' );
-    wp_enqueue_script( 'tna-fww' );
     wp_enqueue_script( 'moment-js' );
 }
 add_action( 'wp_enqueue_scripts', 'tna_child_scripts' );
@@ -93,7 +93,7 @@ function fww_rss( $rssUrl, $id ) {
                 $dc         = $item->children( $namespaces['dc'] );
                 $pubDate    = $item->pubDate;
                 $pubDate    = date( "l d M Y", strtotime( $pubDate ) );
-                $html = '<div class="col-md-6"><div class="card">';
+                $html = '<div class="col-md-6"><div class="card clearfix">';
                 if ( $enclosure ) {
                     $html .= '<div class="entry-thumbnail"><a href="' . $item->link . '" title="' . $item->title . '">';
                     $html .= '<img src="' . $enclosure . '" class="img-responsive" alt="' . $item->title . '">';
@@ -103,7 +103,7 @@ function fww_rss( $rssUrl, $id ) {
                 $html .= $item->title;
                 $html .= '</a></h2>';
                 $html .= '<small>' . $dc->creator . ' | ' . $pubDate . '</small>';
-                $html .= '<p>' . $item->description . '</p><ul class="child"><li><a href="http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/">Join us on our blog</a></li></ul></div>';
+                $html .= '<p>' . $item->description . '</p><ul><li><a href="http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/">Join us on our blog</a></li></ul></div>';
                 $html .= '</div></div>';
                 $n ++;
             endforeach;
@@ -154,7 +154,7 @@ function fww_news_rss( $rssUrlNews, $id ) {
                 $html .= '<small>' . $dc->creator . ' | ' . $pubDate . '</small>';
                 preg_match( "/<p>(.*)<\/p>/", $item->description, $matches );
                 $intro = strip_tags($matches[1]);
-                $html .= '<p>' . $intro . '</p><ul class="child"><li><a href="http://www.nationalarchives.gov.uk/about/news/?news-tag=first-world-war&news-view=child" title="Read more news">More news</a></li></ul></div>';
+                $html .= '<p>' . $intro . '</p><ul><li><a href="http://www.nationalarchives.gov.uk/about/news/?news-tag=first-world-war&news-view=child" title="Read more news">More news</a></li></ul></div>';
                 $html .= '</div></div>';
                 $n ++;
             endforeach;

@@ -35,9 +35,10 @@ $(document).ready(function () {
                 } else {
                     image = "";
                 }
-                s += "<div class='entry-thumbnail'>" + image + "</div><div class='entry-content'><small>What&prime;s on</small><h2><a href='" + event.url + "' title='" + event.name.text + "' target='_blank'>" + event.name.text + "</a></h2><p>" + eventTime + "</p></div>";
+                s += "<div class='entry-thumbnail'>" + image + "</div><div class='entry-content'><small>What&prime;s on</small><h2><a href='" + event.url + "' title='" + event.name.text + "' target='_blank'>" + event.name.text + "</a></h2><p>" + eventTime + "</p>";
             }
-            s += "</div>";
+            s += "<ul class='child'><li><a href='#about-our-programme' title='More First World War events'>More events</a></li></ul>";
+            s += "</div></div>";
             $events.html(s);
         } else {
             $events.html("Sorry, there are no upcoming events.");
