@@ -67,16 +67,16 @@ get_header(); ?>
 						<div class="col-sm-4">
 							<div id="event" class="card clearfix">
 								<div class="entry-thumbnail">
-									<a href="#about-our-programme">
+									<a href="http://nationalarchives.eventbrite.co.uk/" title="The National Archives events" target="_blank">
 										<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/thumb-news.jpg" alt="First World War events">
 									</a>
 								</div>
 								<div class="entry-content">
 									<small>What&prime;s on</small>
 									<h2>First World War events</h2>
-									<ul>
-										<li><a href="#about-our-programme" title="More First World War events">More events</a></li>
-									</ul>
+									<p>
+										<i>Events programme loading.</i> If it does not appear after 10 seconds please <a href="http://nationalarchives.eventbrite.co.uk/" title="The National Archives events" target="_blank">click here</a>.
+									</p>
 								</div>
 							</div>
 						</div>
