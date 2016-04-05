@@ -91,6 +91,7 @@ form select {
     color: #fff;
     background: #6e1608;
     width: 100%;
+    margin-bottom: 1em;
 }
 /* Card styles */
 .card {
