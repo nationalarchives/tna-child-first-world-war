@@ -84,16 +84,22 @@ get_header(); ?>
 						$args = array( 'posts_per_page' => 2, 'post_type' => 'page', 'category_name' => 'feature' );
 						$fwwposts = get_posts( $args );
 						foreach ( $fwwposts as $post ) : setup_postdata( $post ); ?>
+							<?php $redirect = get_post_meta( $post->ID, 'redirectUrl', true );
+							if ( $redirect ) {
+								$postUrl = $redirect;
+							} else {
+								$postUrl = make_path_relative( get_page_link() );
+							} ?>
 							<div class="col-sm-4">
 								<div class="card clearfix">
 									<div class="entry-thumbnail">
-										<a href="<?php echo make_path_relative( get_page_link() ); ?>">
+										<a href="<?php echo $postUrl; ?>">
 											<?php echo make_path_relative( get_the_post_thumbnail( $post->ID, 'large' ) ); ?>
 										</a>
 									</div>
 									<div class="entry-content">
 										<small>Feature</small>
-										<h2><a href="<?php echo make_path_relative( get_page_link() ); ?>"><?php the_title(); ?></a></h2>
+										<h2><a href="<?php echo $postUrl; ?>"><?php the_title(); ?></a></h2>
 										<?php the_excerpt(); ?>
 									</div>
 								</div>
