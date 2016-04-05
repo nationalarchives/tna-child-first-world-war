@@ -4,21 +4,21 @@
  *
  */
 
+// Online collections
 document.getElementById("research-category").onchange = function() {
     if (this.selectedIndex!==0) {
         window.location.href = this.value;
     }
 };
 
+// Eventbrite API
 $(document).ready(function () {
     //number of events displayed
     var n = 1;
     var x = 3;
-
     var $events = $("#event");
-    $events.html("<div class='entry-content'><p><i>Events programme loading.</i> If it does not appear after 10 seconds please <a href='http://nationalarchives.eventbrite.co.uk/' title='The National Archives events' target='_blank'>click here</a>.</p></div>");
     var $eventList = $("#event-list");
-
+    $events.html("<div class='entry-content'><p><i>Events programme loading.</i> If it does not appear after 10 seconds please <a href='http://nationalarchives.eventbrite.co.uk/' title='The National Archives events' target='_blank'>click here</a>.</p></div>");
     $.get("https://www.eventbriteapi.com/v3/events/search/?q=first+world+war&sort_by=date&organizer.id=2226699547&token=5VVFLKAPZUXJSKQ3QTBG", function (res) {
         if (res.events.length && n == 1) {
             var s = "<div class='single-event'>";
