@@ -93,7 +93,7 @@ function fww_rss( $rssUrl, $id ) {
                 $dc         = $item->children( $namespaces['dc'] );
                 $pubDate    = $item->pubDate;
                 $pubDate    = date( "l d M Y", strtotime( $pubDate ) );
-                $html = '<div class="col-md-6"><div class="card clearfix">';
+                $html = '<div class="col-sm-6"><div class="card clearfix">';
                 if ( $enclosure ) {
                     $html .= '<div class="entry-thumbnail"><a href="' . $item->link . '" title="' . $item->title . '">';
                     $html .= '<img src="' . $enclosure . '" class="img-responsive" alt="' . $item->title . '">';
@@ -142,7 +142,7 @@ function fww_news_rss( $rssUrlNews, $id ) {
                 $pubDate    = date( "l d M Y", strtotime( $pubDate ) );
                 $img        = str_replace( home_url(), '', get_stylesheet_directory_uri() ) . '/img/thumb-news.jpg';
                 $link       = str_replace( 'livelb', 'www', $item->link );
-                $html = '<div class="col-md-6"><div class="card clearfix">';
+                $html = '<div class="col-sm-6"><div class="card clearfix">';
                 if ( $img ) {
                     $html .= '<div class="entry-thumbnail"><a href="' . $link . '" title="' . $item->title . '">';
                     $html .= '<img src="' . $img . '" class="img-responsive" alt="' . $item->title . '">';
