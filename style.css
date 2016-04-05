@@ -12,7 +12,7 @@ Text Domain:    tna-base
 */
 
 .fww .banner {
-    background: url("img/fww-banner-bg.jpg") #ddd right;
+    background: url("img/fww-banner-bg.jpg") #ddd;
     background-size: cover;
 }
 .fww .banner h1 {
@@ -115,5 +115,8 @@ form select {
     }
     .connect .sprite {
         float: left;
+    }
+    .fww .banner {
+        background-position: right;
     }
 }
