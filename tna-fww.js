@@ -18,7 +18,7 @@ $(document).ready(function () {
     var x = 3;
     var $events = $("#event");
     var $eventList = $("#event-list");
-    $events.html("<div class='entry-content'><p><i>Events programme loading.</i> If it does not appear after 10 seconds please <a href='http://nationalarchives.eventbrite.co.uk/' title='The National Archives events' target='_blank'>click here</a>.</p></div>");
+    $events.html("<div class='entry-thumbnail'><a href='http://nationalarchives.eventbrite.co.uk/'><img src='/wp-content/themes/tna-fww/img/thumb-news.jpg' alt='First World War events'></a></div><div class='entry-content'><small>What&prime;s on</small><h2>First World War events</h2><p><i>Events programme loading.</i><br>If it does not appear after 10 seconds please <a href='http://nationalarchives.eventbrite.co.uk/' title='The National Archives events' target='_blank'>click here</a>.</p></div>");
     $.get("https://www.eventbriteapi.com/v3/events/search/?q=first+world+war&sort_by=date&organizer.id=2226699547&token=5VVFLKAPZUXJSKQ3QTBG", function (res) {
         if (res.events.length && n == 1) {
             var s = "<div class='single-event'>";
