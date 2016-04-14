@@ -16,9 +16,10 @@ Text Domain:    tna-base
     background-size: cover;
 }
 .fww .banner h1 {
-    font-size: 300%;
+    font-size: 3em;
     color: #fff;
     text-shadow: 2px 2px 8px #000;
+    line-height: 1.23;
 }
 .fww .banner img {
     margin: 0 auto;
@@ -59,7 +60,7 @@ ul.child li {
 .connect form {
     margin: 5px 0;
 }
-.connect #Email {
+.connect #email {
     height: 40px;
 }
 .connect .sprite {
@@ -82,6 +83,7 @@ a:active, a:link, a:visited {
     display: inline-block;
     color: #fff;
     padding: 3px 7px;
+    background-color: #000;
     background-color: rgba(0,0,0,.5);
 }
 .home .breadcrumbs a:active, .home .breadcrumbs a:link, .home .breadcrumbs a:visited {
