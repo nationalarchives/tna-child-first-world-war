@@ -75,6 +75,11 @@ function first_sentence( $content ) {
     return substr( $content, 0, $pos + 1 );
 }
 
+add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
+function wpdocs_theme_setup() {
+    add_image_size( 'feature-thumb', 640, 320, true );
+}
+
 // Dynamic blog content via RSS feed
 function fww_rss( $rssUrl, $id ) {
     // Do we have this information in our transients already?
