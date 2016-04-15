@@ -1,5 +1,5 @@
 <?php if ( ! is_single() ) {
-	$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+	$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'default-page-header' );
 	?>
 	<!-- page.php -->
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

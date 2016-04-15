@@ -94,13 +94,19 @@ get_header(); ?>
 								<div class="card clearfix">
 									<div class="entry-thumbnail">
 										<a href="<?php echo $postUrl; ?>">
-											<?php echo make_path_relative( get_the_post_thumbnail( $post->ID, 'large' ) ); ?>
+											<?php echo make_path_relative( get_the_post_thumbnail( $post->ID, 'feature-thumb' ) ); ?>
 										</a>
 									</div>
 									<div class="entry-content">
 										<small>Feature</small>
 										<h2><a href="<?php echo $postUrl; ?>"><?php the_title(); ?></a></h2>
-										<?php the_excerpt(); ?>
+										<?php
+											if(!$post->post_excerpt) {
+												echo first_sentence( get_the_content() );
+											} else {
+												the_excerpt();
+											}
+										?>
 									</div>
 								</div>
 							</div>
