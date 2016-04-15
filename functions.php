@@ -69,6 +69,12 @@ function category_archives( $wp_query ) {
         $wp_query->set( 'post_type', $my_post_array );
 }
 
+function first_sentence( $content ) {
+    $content = strip_tags( $content );
+    $pos     = strpos( $content, "." );
+    return substr( $content, 0, $pos + 1 );
+}
+
 // Dynamic blog content via RSS feed
 function fww_rss( $rssUrl, $id ) {
     // Do we have this information in our transients already?

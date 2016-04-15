@@ -100,7 +100,13 @@ get_header(); ?>
 									<div class="entry-content">
 										<small>Feature</small>
 										<h2><a href="<?php echo $postUrl; ?>"><?php the_title(); ?></a></h2>
-										<?php the_excerpt(); ?>
+										<?php
+											if(!$post->post_excerpt) {
+												echo first_sentence( get_the_content() );
+											} else {
+												the_excerpt();
+											}
+										?>
 									</div>
 								</div>
 							</div>
@@ -108,8 +114,8 @@ get_header(); ?>
 						wp_reset_postdata();?>
 					</div>
 					<div class="row equal-heights">
-						<?php make_path_relative( fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '1' ) ) ?>
-						<?php make_path_relative( fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '2' ) ) ?>
+						<?php make_path_relative( fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '3' ) ) ?>
+						<?php make_path_relative( fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '4' ) ) ?>
 					</div>
 				</section>
 				<section id="explore-our-records">
