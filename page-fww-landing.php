@@ -44,7 +44,7 @@ get_header(); ?>
 							<h2>Stay up-to-date with all our centenary activity</h2>
 						</div>
 						<div class="col-sm-4">
-							<form name="signup" id="banner-form" class="pad-medium" action="http://dmtrk.co.uk/signup.ashx" method="post">
+							<form name="signup" id="banner-form" class="pad-medium" action="http://dmtrk.co.uk/signup.ashx" method="post" role="form">
 								<input type="hidden" name="addressbookid" value="281378">
 								<input type="hidden" name="userid" value="28895">
 								<input type="hidden" name="ReturnURL" value="http://nationalarchives.gov.uk/news/subscribe-confirmation.htm">
