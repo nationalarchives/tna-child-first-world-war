@@ -48,7 +48,8 @@ get_header(); ?>
 								<input type="hidden" name="addressbookid" value="281378">
 								<input type="hidden" name="userid" value="28895">
 								<input type="hidden" name="ReturnURL" value="http://nationalarchives.gov.uk/news/subscribe-confirmation.htm">
-								<input type="email" id="email" name="Email" required="" placeholder="Enter your email address">
+								<label class="sr-only" for="email">Enter your email address to subscribe to our newsletter</label>
+								<input type="email" id="email" name="Email" required="" placeholder="Enter your email address" aria-label="Enter your email address to subscribe to our newsletter" aria-required="true">
 								<input id="newsletterSignUp" type="submit" value="Subscribe" class="button">
 							</form>
 						</div>
