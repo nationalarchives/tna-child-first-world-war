@@ -11,6 +11,10 @@ document.getElementById("research-category").onchange = function() {
     }
 };
 
+$(document).ready(function () {
+        $('.hidden').removeClass('hidden').addClass('show');
+});
+
 // Eventbrite API
 $(document).ready(function () {
     //number of featured events displayed

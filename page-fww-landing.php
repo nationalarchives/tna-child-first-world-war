@@ -147,7 +147,7 @@ get_header(); ?>
 											</div>
 											<h3><a href="first-world-war/centenary-digitised-records/">Browse our online collections</a></h3>
 											<p>We hold a vast collection of documents, letters, diaries, maps and photographs from the First World War, many of which have been digitised.</p>
-											<form>
+											<form class="hidden">
 												<select name="research-category" id="research-category" class="margin-right-medium">
 													<option value="0">Select a subject</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/?research-category=first-world-war&sub-category%5B%5D=medals-and-awards&res-online=1">Medals</option>
