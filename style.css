@@ -66,11 +66,7 @@ ul.child li {
 .connect .sprite {
     float: right;
 }
-article .entry-header h1 {
-    background: url(img/logo-page.png) #6e1608 no-repeat 5px 3px;
-    padding-left: 110px;
-}
-article .entry-header h2, aside .sidebar-header h2 {
+article .entry-header h1, article .entry-header h2, aside .sidebar-header h2 {
     background-color: #6e1608;
 }
 a:active, a:link, a:visited {
@@ -111,6 +107,10 @@ form select {
 .card .entry-thumbnail img {
     width: 100%;
     height: auto;
+}
+.page-banner {
+    padding: 0.5em 0;
+    background: url(img/fww-page-banner.jpg) right center no-repeat #273979;
 }
 @media (max-width:768px) {
     .featured .col-sm-4 {

@@ -115,8 +115,13 @@ get_header(); ?>
 						wp_reset_postdata();?>
 					</div>
 					<div class="row equal-heights">
+
+						<!- Dynamically pulls the latest blog item with the tagged first-world-war ->
 						<?php make_path_relative( fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '1' ) ) ?>
+
+						<!- Dynamically pulls the latest news item with the category first-world-war-portal-news ->
 						<?php make_path_relative( fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '2' ) ) ?>
+
 					</div>
 				</section>
 				<section id="explore-our-records">
@@ -233,6 +238,14 @@ get_header(); ?>
 										<h3>First World War 100</h3>
 										<p>We are marking the centenary of the war with an extensive programme, spanning a five-year period between 2014 and 2019.</p>
 										<p>Find out more about our programme, which explores major anniversaries and key aspects of the war through themes such as technology and the Middle East.</p>
+									<ul class="child">
+										<?php
+										// This gets home and parent page IDs
+										$parent_id = $post->post_parent;
+										$home_id = get_option('page_on_front');
+										echo make_path_relative( wp_list_pages("echo=0&title_li=&child_of=$parent_id&sort_column=menu_order&depth=1&exclude=$post->ID,$home_id") );
+										?>
+									</ul>
 								</div>
 							</article>
 						</div>

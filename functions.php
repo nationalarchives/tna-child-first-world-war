@@ -41,17 +41,19 @@ function tna_child_styles() {
 add_action( 'wp_enqueue_scripts', 'tna_child_styles' );
 
 function tna_child_scripts() {
-    wp_register_script( 'tna-fww', get_stylesheet_directory_uri() . '/tna-fww.js', array(),
-        EDD_VERSION, true );
-    wp_register_script( 'equal-heights', get_template_directory_uri() . '/js/jQuery.equalHeights.js', array(),
-        EDD_VERSION, true );
-    wp_register_script( 'equal-heights-var', get_template_directory_uri() . '/js/equalHeights.js', array(),
-        EDD_VERSION, true );
-    wp_register_script('moment-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js');
-    wp_enqueue_script( 'tna-fww' );
-    wp_enqueue_script( 'equal-heights' );
-    wp_enqueue_script( 'equal-heights-var' );
-    wp_enqueue_script( 'moment-js' );
+    if ( is_front_page() ) {
+        wp_register_script( 'tna-fww', get_stylesheet_directory_uri() . '/tna-fww.js', array(),
+            EDD_VERSION, true );
+        wp_register_script( 'equal-heights', get_template_directory_uri() . '/js/jQuery.equalHeights.js', array(),
+            EDD_VERSION, true );
+        wp_register_script( 'equal-heights-var', get_template_directory_uri() . '/js/equalHeights.js', array(),
+            EDD_VERSION, true );
+        wp_register_script( 'moment-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js' );
+        wp_enqueue_script( 'tna-fww' );
+        wp_enqueue_script( 'equal-heights' );
+        wp_enqueue_script( 'equal-heights-var' );
+        wp_enqueue_script( 'moment-js' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'tna_child_scripts' );
 
@@ -179,3 +181,25 @@ function fww_news_rss( $rssUrlNews, $id ) {
 }
 
 
+function fww_add_dashboard_widgets() {
+
+    wp_add_dashboard_widget(
+        'fww_dashboard_widget',
+        'First World War portal information',
+        'fww_dashboard_widget_function'
+    );
+}
+add_action( 'wp_dashboard_setup', 'fww_add_dashboard_widgets' );
+
+function fww_dashboard_widget_function() {
+    echo "
+        <p>The first five content boxes on the landing page are dynamic.</p>
+        <ul>
+            <li>Box 1: Content from TNA's Eventbrite account display the upcoming event with the keyword 'First World War'</li>
+            <li>Box 2 & 3: Content from pages within the site categorised 'Feature'</li>
+            <li>Box 4: Content from TNA's blog displaying the latest blog post tagged 'First World War'</li>
+            <li>Box 5: Content from TNA's news displaying the latest news item categorised 'First World War portal news'</li>
+        </ul>
+        <p>The sections below the dynamic content are static content.</p>
+    ";
+}
