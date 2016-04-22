@@ -181,3 +181,25 @@ function fww_news_rss( $rssUrlNews, $id ) {
 }
 
 
+function fww_add_dashboard_widgets() {
+
+    wp_add_dashboard_widget(
+        'fww_dashboard_widget',
+        'First World War portal information',
+        'fww_dashboard_widget_function'
+    );
+}
+add_action( 'wp_dashboard_setup', 'fww_add_dashboard_widgets' );
+
+function fww_dashboard_widget_function() {
+    echo "
+        <p>The first five content boxes on the landing page are dynamic.</p>
+        <ul>
+            <li>Box 1: Content from TNA's Eventbrite account display the upcoming event with the keyword 'First World War'</li>
+            <li>Box 2 & 3: Content from pages within the site categorised 'Feature'</li>
+            <li>Box 4: Content from TNA's blog displaying the latest blog post tagged 'First World War'</li>
+            <li>Box 5: Content from TNA's news displaying the latest news item categorised 'First World War portal news'</li>
+        </ul>
+        <p>The sections below the dynamic content are static content.</p>
+    ";
+}
