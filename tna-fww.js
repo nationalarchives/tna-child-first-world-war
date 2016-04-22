@@ -11,15 +11,23 @@ document.getElementById("research-category").onchange = function() {
     }
 };
 
+$(document).ready(function () {
+        $('.hidden').removeClass('hidden').addClass('show');
+});
+
 // Eventbrite API
 $(document).ready(function () {
-    //number of events displayed
+    //number of featured events displayed
     var n = 1;
+    //number of events displayed under 'What's on'
     var x = 3;
     var $events = $("#event");
     var $eventList = $("#event-list");
-    $events.html("<div class='entry-thumbnail'><a href='http://nationalarchives.eventbrite.co.uk/'><img src='/wp-content/themes/tna-fww/img/thumb-news.jpg' alt='First World War events'></a></div><div class='entry-content'><small>What&prime;s on</small><h2>First World War events</h2><p><i>Events programme loading.</i><br>If it does not appear after 10 seconds please <a href='http://nationalarchives.eventbrite.co.uk/' title='The National Archives events' target='_blank'>click here</a>.</p></div>");
+    // message while API is loading
+    $events.html("<div class='entry-thumbnail'><a href='http://nationalarchives.eventbrite.co.uk/'><img src='/wp-content/themes/first-world-war/img/thumb-news.jpg' alt='First World War events'></a></div><div class='entry-content'><small>What&prime;s on</small><h2>First World War events</h2><p><i>Events programme loading.</i><br>If it does not appear after 10 seconds please <a href='http://nationalarchives.eventbrite.co.uk/' title='The National Archives events' target='_blank'>click here</a>.</p></div>");
+    // Get data from API
     $.get("https://www.eventbriteapi.com/v3/events/search/?q=first+world+war&sort_by=date&organizer.id=2226699547&token=5VVFLKAPZUXJSKQ3QTBG", function (res) {
+        // displays upcoming feature event
         if (res.events.length && n == 1) {
             var s = "<div class='single-event'>";
             if (n <= res.events.length) {
@@ -41,8 +49,9 @@ $(document).ready(function () {
             s += "</div></div>";
             $events.html(s);
         } else {
-            $events.html("Sorry, there are no upcoming events.");
+            $events.html("<h3>Sorry, there are no upcoming events</h3>");
         }
+        // displays a list of upcoming events with an offset of 1 under 'What's on'
         if (res.events.length && x == 3) {
             var s = "<ul>";
             if (x <= res.events.length) {
@@ -58,7 +67,7 @@ $(document).ready(function () {
             s += "</ul>";
             $eventList.html(s);
         } else {
-            $eventlist.html("Sorry, there are no upcoming events.");
+            $eventlist.html("<h3>Sorry, there are no upcoming events</h3>");
         }
     });
 });

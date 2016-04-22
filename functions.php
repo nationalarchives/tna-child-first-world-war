@@ -41,17 +41,19 @@ function tna_child_styles() {
 add_action( 'wp_enqueue_scripts', 'tna_child_styles' );
 
 function tna_child_scripts() {
-    wp_register_script( 'tna-fww', get_stylesheet_directory_uri() . '/tna-fww.js', array(),
-        EDD_VERSION, true );
-    wp_register_script( 'equal-heights', get_template_directory_uri() . '/js/jQuery.equalHeights.js', array(),
-        EDD_VERSION, true );
-    wp_register_script( 'equal-heights-var', get_template_directory_uri() . '/js/equalHeights.js', array(),
-        EDD_VERSION, true );
-    wp_register_script('moment-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js');
-    wp_enqueue_script( 'tna-fww' );
-    wp_enqueue_script( 'equal-heights' );
-    wp_enqueue_script( 'equal-heights-var' );
-    wp_enqueue_script( 'moment-js' );
+    if ( is_front_page() ) {
+        wp_register_script( 'tna-fww', get_stylesheet_directory_uri() . '/tna-fww.js', array(),
+            EDD_VERSION, true );
+        wp_register_script( 'equal-heights', get_template_directory_uri() . '/js/jQuery.equalHeights.js', array(),
+            EDD_VERSION, true );
+        wp_register_script( 'equal-heights-var', get_template_directory_uri() . '/js/equalHeights.js', array(),
+            EDD_VERSION, true );
+        wp_register_script( 'moment-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js' );
+        wp_enqueue_script( 'tna-fww' );
+        wp_enqueue_script( 'equal-heights' );
+        wp_enqueue_script( 'equal-heights-var' );
+        wp_enqueue_script( 'moment-js' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'tna_child_scripts' );
 
@@ -67,6 +69,17 @@ function category_archives( $wp_query ) {
     $my_post_array = array('post','page');
     if ( $wp_query->get( 'category_name' ) || $wp_query->get( 'cat' ) )
         $wp_query->set( 'post_type', $my_post_array );
+}
+
+function first_sentence( $content ) {
+    $content = strip_tags( $content );
+    $pos     = strpos( $content, "." );
+    return substr( $content, 0, $pos + 1 );
+}
+
+add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
+function wpdocs_theme_setup() {
+    add_image_size( 'feature-thumb', 640, 320, true );
 }
 
 // Dynamic blog content via RSS feed
@@ -151,7 +164,7 @@ function fww_news_rss( $rssUrlNews, $id ) {
                 $html .= '<div class="entry-content"><small>News</small><h2><a href="' . $link . '">';
                 $html .= $item->title;
                 $html .= '</a></h2>';
-                $html .= '<small>' . $dc->creator . ' | ' . $pubDate . '</small>';
+                $html .= '<small>' . $pubDate . '</small>';
                 preg_match( "/<p>(.*)<\/p>/", $item->description, $matches );
                 $intro = strip_tags($matches[1]);
                 $html .= '<p>' . $intro . '</p><ul class="child"><li><a href="http://www.nationalarchives.gov.uk/about/news/?news-tag=first-world-war&news-view=child" title="Read more news">More news</a></li></ul></div>';
@@ -168,3 +181,25 @@ function fww_news_rss( $rssUrlNews, $id ) {
 }
 
 
+function fww_add_dashboard_widgets() {
+
+    wp_add_dashboard_widget(
+        'fww_dashboard_widget',
+        'First World War portal information',
+        'fww_dashboard_widget_function'
+    );
+}
+add_action( 'wp_dashboard_setup', 'fww_add_dashboard_widgets' );
+
+function fww_dashboard_widget_function() {
+    echo "
+        <p>The first five content boxes on the landing page are dynamic.</p>
+        <ul>
+            <li>Box 1: Content from TNA's Eventbrite account display the upcoming event with the keyword 'First World War'</li>
+            <li>Box 2 & 3: Content from pages within the site categorised 'Feature'</li>
+            <li>Box 4: Content from TNA's blog displaying the latest blog post tagged 'First World War'</li>
+            <li>Box 5: Content from TNA's news displaying the latest news item categorised 'First World War portal news'</li>
+        </ul>
+        <p>The sections below the dynamic content are static content.</p>
+    ";
+}
