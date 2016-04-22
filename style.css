@@ -109,8 +109,8 @@ form select {
     height: auto;
 }
 .page-banner {
-    padding: 0.4em 0;
-    background-color: #273979;
+    padding: 0.5em 0;
+    background: url(img/fww-page-banner.jpg) right center no-repeat #273979;
 }
 @media (max-width:768px) {
     .featured .col-sm-4 {
