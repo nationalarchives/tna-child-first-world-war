@@ -44,11 +44,12 @@ get_header(); ?>
 							<h2>Stay up-to-date with all our centenary activity</h2>
 						</div>
 						<div class="col-sm-4">
-							<form name="signup" id="banner-form" class="pad-medium" action="http://dmtrk.co.uk/signup.ashx" method="post">
+							<form name="signup" id="banner-form" class="pad-medium" action="http://dmtrk.co.uk/signup.ashx" method="post" role="form">
 								<input type="hidden" name="addressbookid" value="281378">
 								<input type="hidden" name="userid" value="28895">
 								<input type="hidden" name="ReturnURL" value="http://nationalarchives.gov.uk/news/subscribe-confirmation.htm">
-								<input type="email" id="email" name="Email" required="" placeholder="Enter your email address">
+								<label class="sr-only" for="email">Enter your email address to subscribe to our newsletter</label>
+								<input type="email" id="email" name="Email" required="" placeholder="Enter your email address" aria-label="Enter your email address to subscribe to our newsletter" aria-required="true">
 								<input id="newsletterSignUp" type="submit" value="Subscribe" class="button">
 							</form>
 						</div>
@@ -146,7 +147,7 @@ get_header(); ?>
 											</div>
 											<h3><a href="first-world-war/centenary-digitised-records/">Browse our online collections</a></h3>
 											<p>We hold a vast collection of documents, letters, diaries, maps and photographs from the First World War, many of which have been digitised.</p>
-											<form>
+											<form class="hidden">
 												<select name="research-category" id="research-category" class="margin-right-medium">
 													<option value="0">Select a subject</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/?research-category=first-world-war&sub-category%5B%5D=medals-and-awards&res-online=1">Medals</option>

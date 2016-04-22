@@ -162,7 +162,7 @@ function fww_news_rss( $rssUrlNews, $id ) {
                 $html .= '<div class="entry-content"><small>News</small><h2><a href="' . $link . '">';
                 $html .= $item->title;
                 $html .= '</a></h2>';
-                $html .= '<small>' . $dc->creator . ' | ' . $pubDate . '</small>';
+                $html .= '<small>' . $pubDate . '</small>';
                 preg_match( "/<p>(.*)<\/p>/", $item->description, $matches );
                 $intro = strip_tags($matches[1]);
                 $html .= '<p>' . $intro . '</p><ul class="child"><li><a href="http://www.nationalarchives.gov.uk/about/news/?news-tag=first-world-war&news-view=child" title="Read more news">More news</a></li></ul></div>';
