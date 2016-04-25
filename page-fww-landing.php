@@ -116,10 +116,10 @@ get_header(); ?>
 					</div>
 					<div class="row equal-heights">
 
-						<!- Dynamically pulls the latest blog item with the tagged first-world-war ->
+						<!-- Dynamically pulls the latest blog item with the tagged first-world-war -->
 						<?php make_path_relative( fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '1' ) ) ?>
 
-						<!- Dynamically pulls the latest news item with the category first-world-war-portal-news ->
+						<!-- Dynamically pulls the latest news item with the category first-world-war-portal-news -->
 						<?php make_path_relative( fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '2' ) ) ?>
 
 					</div>
