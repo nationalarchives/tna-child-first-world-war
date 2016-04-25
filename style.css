@@ -50,7 +50,7 @@ ul.child li {
     float: none;
 }
 .connect h2 {
-    margin: 5px 0 0 0;
+    margin: 5px 0 0 5px;
 }
 .connect {
     background: #ddd;
