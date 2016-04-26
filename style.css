@@ -112,6 +112,21 @@ form select {
     padding: 0.5em 0;
     background: url(img/fww-page-banner.jpg) right center no-repeat #273979;
 }
+.research-guide-form {
+    background-color: #eee;
+    padding: 0.5em;
+}
+.research-guide-form .field-row label {
+    width: 30%;
+}
+.research-guide-form .field-row input {
+    width: 69%;
+    margin-bottom: 0.5em;
+    float: right;
+}
+.research-guide-form .button-holder {
+    text-align: right;
+}
 @media (max-width:768px) {
     .featured .col-sm-4 {
         height: auto !important;
@@ -121,5 +136,8 @@ form select {
     }
     .fww .banner {
         background-position: right;
+    }
+    .research-guide-form .field-row label, .research-guide-form .field-row input {
+        width: 100%;
     }
 }
