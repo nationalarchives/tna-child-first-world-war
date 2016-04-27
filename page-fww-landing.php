@@ -243,7 +243,14 @@ get_header(); ?>
 										// This gets home and parent page IDs
 										$parent_id = $post->post_parent;
 										$home_id = get_option('page_on_front');
-										echo make_path_relative( wp_list_pages("echo=0&title_li=&child_of=$parent_id&sort_column=menu_order&depth=1&exclude=$post->ID,$home_id") );
+										// Exclude pages categorised 'feature'
+										$post_ids = get_posts(array(
+											'post_type' => 'page',
+											'category_name' => 'feature',
+											'numberposts'   => 2,
+											'fields'        => 'ids'
+										));
+										echo make_path_relative( wp_list_pages("echo=0&title_li=&child_of=$parent_id&sort_column=menu_order&depth=1&exclude=$post->ID,$home_id,$post_ids[0],$post_ids[1]") );
 										?>
 									</ul>
 								</div>
