@@ -180,9 +180,23 @@ function fww_news_rss( $rssUrlNews, $id ) {
     }
 }
 
+/* START OF code which manages forms on the Research guides */
+if (!function_exists('render_form')) :
+    function render_form($atts) {
+        $file_name = $atts['form'];
+        $local_path = get_stylesheet_directory_uri() . '/';
+        $file_content = file_get_contents($local_path . $atts['form'] . '.php');
+        if (strlen($file_content) > 0) {
+            return $file_content;
+        } else {
+            return 'No such file found: ' . $local_path . $file_name;
+        }
+    }
+endif;
+add_shortcode('guided-search', 'render_form');
+/* END OF code which manages forms on the Research guides */
 
 function fww_add_dashboard_widgets() {
-
     wp_add_dashboard_widget(
         'fww_dashboard_widget',
         'First World War portal information',

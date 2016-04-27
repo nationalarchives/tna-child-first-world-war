@@ -5,7 +5,7 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="entry-header" <?php
 		if ( has_post_thumbnail() ) { ?>
-			style="background: url(<?php echo make_path_relative( $thumbnail_src[0] ); ?>);background-size: cover;height: 240px;"
+			style="background: url(<?php echo make_path_relative( $thumbnail_src[0] ); ?>) center center;background-size: cover;height: 240px;"
 		<?php } ?>>
 			<h1><?php the_title(); ?></h1>
 		</div>
