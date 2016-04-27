@@ -184,7 +184,7 @@ function fww_news_rss( $rssUrlNews, $id ) {
 if (!function_exists('render_form')) :
     function render_form($atts) {
         $file_name = $atts['form'];
-        $local_path = get_stylesheet_directory_uri() . '/';
+        $local_path = get_stylesheet_directory() . '/';
         $file_content = file_get_contents($local_path . $atts['form'] . '.php');
         if (strlen($file_content) > 0) {
             return $file_content;
