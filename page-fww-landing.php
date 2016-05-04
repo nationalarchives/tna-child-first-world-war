@@ -139,7 +139,7 @@ get_header(); ?>
 													<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/fww-records.jpg" class="img-responsive" alt="Find your ancestor in our FWW records">
 												</a>
 											</div>
-												<h3><a href="#">Find your ancestor in our FWW records</a></h3>
+												<h3><a href="#">Find your ancestor in our First World War records</a></h3>
 												<p>If you want to explore our First World War records and are new to researching at The National Archives, you <a href="#">can start your research here</a> or <a href="#">chat to one of our reader advisors online</a>.</p>
 										</div>
 									</div>
@@ -204,7 +204,7 @@ get_header(); ?>
 											</div>
 											<small>Soldiers' letters</small>
 											<h3><a href="http://www.nationalarchives.gov.uk/education/resources/letters-first-world-war-1915/">Letters from the First World War</a></h3>
-											<p>Explore how a group of men from varied backgrounds experienced active service.</p>
+											<p>Use our education resource to explore how men from varied backgrounds experienced active service.</p>
 										</div>
 									</div>
 									<div class="col-sm-6">
@@ -215,8 +215,8 @@ get_header(); ?>
 												</a>
 											</div>
 											<small>Media</small>
-											<h3><a href="http://media.nationalarchives.gov.uk/index.php/tag/first-world-war/">First World War poscasts and videos</a></h3>
-											<p>Use our podcasts and videos to help you explore our records of the First World War, from tracing battalions of the British Army to the Women's Land Army.</p>
+											<h3><a href="http://media.nationalarchives.gov.uk/index.php/tag/first-world-war/">First World War podcasts and videos</a></h3>
+											<p>Let our podcasts and videos guide you through our records of the First World War, from tracing battalions of the British Army to the Women's Land Army.</p>
 										</div>
 									</div>
 								</div>
@@ -288,7 +288,7 @@ get_header(); ?>
 											<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/tnabookshop.jpg" class="img-responsive" alt="Visit The National Archives Bookshop at Kew">
 										</div>
 										<h4>First World War nurses</h4>
-										<p>From the beginning of the First World War, a range of women volunteered as nurses working close to the front line. <a href="http://bookshop.nationalarchives.gov.uk/theme/WWInurses/">Read their stories</a>, touching, funny, and harrowing by turns.</p>
+										<p>Our bookshop sells a wide range of books, DVDs and merchandise related to the First World War, including useful guides on tracing your ancestors.</p>
 										<ul class="child"><li><a href="http://bookshop.nationalarchives.gov.uk/store/filtered/6/c_28/">Find more at our Bookshop</a></li></ul>
 								</div>
 							</article>
