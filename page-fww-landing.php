@@ -199,7 +199,7 @@ get_header(); ?>
 										<div class="clearfix">
 											<div class="entry-thumbnail">
 												<a href="http://www.nationalarchives.gov.uk/education/resources/letters-first-world-war-1915/">
-													<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/soldiers-MUN-5_157_1916-1918.jpg" class="img-responsive" alt="Letters from the First World War">
+													<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/soldiers.jpg" class="img-responsive" alt="Letters from the First World War">
 												</a>
 											</div>
 											<small>Soldiers' letters</small>
@@ -211,7 +211,7 @@ get_header(); ?>
 										<div class="clearfix">
 											<div class="entry-thumbnail">
 												<a href="http://media.nationalarchives.gov.uk/index.php/tag/first-world-war/">
-													<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/podcasts-MUN-5_394_40_June-1915.jpg" class="img-responsive" alt="First World War poscasts and videos">
+													<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/podcasts.jpg" class="img-responsive" alt="First World War poscasts and videos">
 												</a>
 											</div>
 											<small>Media</small>
@@ -263,7 +263,7 @@ get_header(); ?>
 								</div>
 								<div class="entry-content clearfix">
 										<div class="entry-thumbnail">
-											<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/whatson-CAB-45_7_1914.jpg" class="img-responsive" alt="First World War 100 events calendar">
+											<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/whatson.jpg" class="img-responsive" alt="First World War 100 events calendar">
 										</div>
 										<h3>Events calendar</h3>
 										<div id="event-list"></div>
