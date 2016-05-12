@@ -135,22 +135,22 @@ get_header(); ?>
 									<div class="col-sm-4">
 										<div class="clearfix">
 											<div class="entry-thumbnail">
-												<a href="#">
+												<a href="http://discovery.nationalarchives.gov.uk/">
 													<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/fww-records.jpg" class="img-responsive" alt="Find your ancestor in our FWW records">
 												</a>
 											</div>
-												<h3><a href="#">Find your ancestor in our First World War records</a></h3>
-												<p>If you want to explore our First World War records and are new to researching at The National Archives, you <a href="#">can start your research here</a> or <a href="#">chat to one of our reader advisors online</a>.</p>
+												<h3><a href="http://discovery.nationalarchives.gov.uk/">Find your ancestor in our First World War records</a></h3>
+												<p>If you want to explore our First World War records and are new to researching at The National Archives, you <a href="http://www.nationalarchives.gov.uk/help-with-your-research/start-here/">can start your research here</a> or <a href="http://www.nationalarchives.gov.uk/contact/#livechat">chat to one of our reader advisors online</a>.</p>
 										</div>
 									</div>
 									<div class="col-sm-4">
 										<div class="clearfix">
 											<div class="entry-thumbnail">
-												<a href="first-world-war/centenary-digitised-records/">
+												<a href="centenary-digitised-records/">
 													<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/online-collection.jpg" class="img-responsive" alt="Search our online collections">
 												</a>
 											</div>
-											<h3><a href="first-world-war/centenary-digitised-records/">Browse our online collections</a></h3>
+											<h3><a href="centenary-digitised-records/">Browse our online collections</a></h3>
 											<p>We hold a vast collection of documents, letters, diaries, maps and photographs from the First World War, many of which have been digitised.</p>
 											<form class="hidden">
 												<select name="research-category" id="research-category" class="margin-right-medium">
@@ -237,7 +237,7 @@ get_header(); ?>
 										</div>
 										<h3>First World War 100</h3>
 										<p>We are marking the centenary of the war with an extensive programme, spanning a five-year period between 2014 and 2019.</p>
-										<p>Find out more about our programme, which explores major anniversaries and key aspects of the war through themes such as technology and the Middle East.</p>
+										<p>Find out more about our programme, which explores major anniversaries and key aspects of the war through themes (such as technology and the Middle East), special projects and partnerships.</p>
 									<ul class="child">
 										<?php
 										// This gets home and parent page IDs
@@ -287,9 +287,10 @@ get_header(); ?>
 										<div class="entry-thumbnail">
 											<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/tnabookshop.jpg" class="img-responsive" alt="Visit The National Archives Bookshop at Kew">
 										</div>
-										<h4>First World War nurses</h4>
+										<h4>First World War titles in the bookshop</h4>
 										<p>Our bookshop sells a wide range of books, DVDs and merchandise related to the First World War, including useful guides on tracing your ancestors.</p>
-										<ul class="child"><li><a href="http://bookshop.nationalarchives.gov.uk/store/filtered/6/c_28/">Find more at our Bookshop</a></li></ul>
+										<p>Located on the ground floor opposite the cafe.</p>
+										<ul class="child"><li><a href="http://bookshop.nationalarchives.gov.uk/store/filtered/6/c_28/">Find more at our online Bookshop</a></li></ul>
 								</div>
 							</article>
 						</div>
