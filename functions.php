@@ -148,15 +148,18 @@ function fww_news_rss( $rssUrlNews, $id ) {
                 if ( $n == 1 ) {
                     break;
                 }
-                // $enclosure  = $item->enclosure['url'];
-                $namespaces = $item->getNameSpaces( true );
-                $dc         = $item->children( $namespaces['dc'] );
+                $enclosure  = $item->enclosure['url'];
                 $pubDate    = $item->pubDate;
                 $pubDate    = date( "l d M Y", strtotime( $pubDate ) );
                 $img        = str_replace( home_url(), '', get_stylesheet_directory_uri() ) . '/img/thumb-news.jpg';
                 $link       = str_replace( 'livelb', 'www', $item->link );
                 $html = '<div class="col-sm-6"><div class="card clearfix">';
-                if ( $img ) {
+                if ( $enclosure ) {
+                    $html .= '<div class="entry-thumbnail"><a href="' . $link . '" title="' . $item->title . '">';
+                    $html .= '<img src="' . $enclosure . '" class="img-responsive" alt="' . $item->title . '">';
+                    $html .= '</a></div>';
+                }
+                if ( !$enclosure ) {
                     $html .= '<div class="entry-thumbnail"><a href="' . $link . '" title="' . $item->title . '">';
                     $html .= '<img src="' . $img . '" class="img-responsive" alt="' . $item->title . '">';
                     $html .= '</a></div>';

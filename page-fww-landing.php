@@ -120,7 +120,7 @@ get_header(); ?>
 						<?php make_path_relative( fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '1' ) ) ?>
 
 						<!-- Dynamically pulls the latest news item with the category first-world-war-portal-news -->
-						<?php make_path_relative( fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '2' ) ) ?>
+						<?php make_path_relative( fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '3' ) ) ?>
 
 					</div>
 				</section>
