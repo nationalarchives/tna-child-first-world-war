@@ -85,11 +85,16 @@ a:active, a:link, a:visited {
 .home .breadcrumbs a:active, .home .breadcrumbs a:link, .home .breadcrumbs a:visited {
     color: #fff;
 }
-form select {
+.select-menu {
+    padding: 1em;
+    background: #2d3b59;
+}
+.select-menu h4 {
     color: #fff;
-    background: #6e1608;
+    margin-top: 0;
+}
+form select {
     width: 100%;
-    margin-bottom: 1em;
 }
 /* Card styles */
 .card {

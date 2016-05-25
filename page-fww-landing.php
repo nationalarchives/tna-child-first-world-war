@@ -152,9 +152,11 @@ get_header(); ?>
 											</div>
 											<h3><a href="centenary-digitised-records/">Browse our online collections</a></h3>
 											<p>We hold a vast collection of documents, letters, diaries, maps and photographs from the First World War, many of which have been digitised.</p>
-											<form class="hidden">
+											<div class="select-menu hidden">
+												<h4>Select a subject</h4>
+											<form>
 												<select name="research-category" id="research-category" class="margin-right-medium">
-													<option value="0">Select a subject</option>
+													<option value="0">First World War</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/?research-category=first-world-war&sub-category%5B%5D=medals-and-awards&res-online=1">Medals</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/raf-officers-service-records-1918-1919/">RAF officers</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-seamens-campaign-medal-records-1914-1918/">Merchant seamen</option>
@@ -168,6 +170,7 @@ get_header(); ?>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/middlesex-military-service-appeal-tribunal-1916-1918/">Conscription appeals</option>
 												</select>
 											</form>
+											</div>
 										</div>
 									</div>
 									<div class="col-sm-4">
