@@ -135,11 +135,11 @@ get_header(); ?>
 									<div class="col-sm-4">
 										<div class="clearfix">
 											<div class="entry-thumbnail">
-												<a href="http://discovery.nationalarchives.gov.uk/">
+												<a href="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/?research-category=first-world-war">
 													<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/fww-records.jpg" class="img-responsive" alt="Find your ancestor in our FWW records">
 												</a>
 											</div>
-												<h3><a href="http://discovery.nationalarchives.gov.uk/">Find your ancestor in our First World War records</a></h3>
+												<h3><a href="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/?research-category=first-world-war">Find your ancestor in our First World War records</a></h3>
 												<p>If you want to explore our First World War records and are new to researching at The National Archives, you <a href="http://www.nationalarchives.gov.uk/help-with-your-research/start-here/">can start your research here</a> or <a href="http://www.nationalarchives.gov.uk/contact/#livechat">chat to one of our reader advisors online</a>.</p>
 										</div>
 									</div>
