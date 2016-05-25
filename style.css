@@ -151,4 +151,7 @@ form select {
     .featured .col-sm-4 {
         height: auto !important;
     }
+    .select-menu {
+        margin-bottom: 1em;
+    }
 }
