@@ -61,6 +61,7 @@ ul.child li {
     margin: 5px 0;
 }
 .connect #email {
+    min-width: 200px;
     height: 40px;
 }
 .connect .sprite {
@@ -85,11 +86,16 @@ a:active, a:link, a:visited {
 .home .breadcrumbs a:active, .home .breadcrumbs a:link, .home .breadcrumbs a:visited {
     color: #fff;
 }
-form select {
+.select-menu {
+    padding: 1em;
+    background: #2d3b59;
+}
+.select-menu h4 {
     color: #fff;
-    background: #6e1608;
+    margin-top: 0;
+}
+form select {
     width: 100%;
-    margin-bottom: 1em;
 }
 /* Card styles */
 .card {
@@ -128,6 +134,9 @@ form select {
     text-align: right;
 }
 @media (max-width:768px) {
+    .card h2 {
+        font-size: 1.2em;
+    }
     .featured .col-sm-4 {
         height: auto !important;
     }
