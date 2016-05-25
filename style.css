@@ -137,9 +137,6 @@ form select {
     .card h2 {
         font-size: 1.2em;
     }
-    .featured .col-sm-4 {
-        height: auto !important;
-    }
     .connect .sprite {
         float: left;
     }
@@ -148,5 +145,10 @@ form select {
     }
     .research-guide-form .field-row label, .research-guide-form .field-row input {
         width: 100%;
+    }
+}
+@media (max-width:576px) {
+    .featured .col-sm-4 {
+        height: auto !important;
     }
 }
