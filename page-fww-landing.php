@@ -291,7 +291,7 @@ get_header(); ?>
 										<div class="entry-thumbnail">
 											<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/tnabookshop.jpg" class="img-responsive" alt="Visit The National Archives Bookshop at Kew">
 										</div>
-										<h4>First World War titles in the bookshop</h4>
+										<h3>First World War titles in the bookshop</h3>
 										<p>Our bookshop sells a wide range of books, DVDs and merchandise related to the First World War, including useful guides on tracing your ancestors.</p>
 										<p>Located on the ground floor opposite the cafe.</p>
 										<ul class="child"><li><a href="http://bookshop.nationalarchives.gov.uk/store/filtered/6/c_28/">Find more at our online Bookshop</a></li></ul>
