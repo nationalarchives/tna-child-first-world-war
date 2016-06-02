@@ -110,6 +110,9 @@ form select {
     max-height: 185px;
     overflow: hidden;
 }
+.rss-content .card .entry-thumbnail {
+    height: 185px;
+}
 .card .entry-thumbnail img {
     width: 100%;
     height: auto;

@@ -114,7 +114,7 @@ get_header(); ?>
 						<?php endforeach;
 						wp_reset_postdata();?>
 					</div>
-					<div class="row equal-heights">
+					<div class="row equal-heights rss-content">
 
 						<!-- Dynamically pulls the latest blog item with the tagged first-world-war -->
 						<?php make_path_relative( fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '1' ) ) ?>
