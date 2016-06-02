@@ -108,7 +108,8 @@ function fww_rss( $rssUrl, $id ) {
                 $pubDate    = date( "l d M Y", strtotime( $pubDate ) );
                 $html = '<div class="col-sm-6"><div class="card clearfix">';
                 if ( $enclosure ) {
-                    $html .= '<a href="' . $item->link . '" title="' . $item->title . '"><div class="entry-thumbnail" style="background: url(' . $enclosure . ') no-repeat center center;background-size: cover;">';
+                    $html .= '<a href="' . $item->link . '" title="' . $item->title . '">';
+                    $html .= '<div class="entry-thumbnail" style="background: url(' . $enclosure . ') no-repeat center center;background-size: cover;">';
                     // $html .= '<img src="' . $enclosure . '" class="img-responsive" alt="' . $item->title . '">';
                     $html .= '</div></a>';
                 }
@@ -155,14 +156,16 @@ function fww_news_rss( $rssUrlNews, $id ) {
                 $link       = str_replace( 'livelb', 'www', $item->link );
                 $html = '<div class="col-sm-6"><div class="card clearfix">';
                 if ( $enclosure ) {
-                    $html .= '<div class="entry-thumbnail"><a href="' . $link . '" title="' . $item->title . '">';
-                    $html .= '<img src="' . $enclosure . '" class="img-responsive" alt="' . $item->title . '">';
-                    $html .= '</a></div>';
+                    $html .= '<a href="' . $item->link . '" title="' . $item->title . '">';
+                    $html .= '<div class="entry-thumbnail" style="background: url(' . $enclosure . ') no-repeat center center;background-size: cover;">';
+                    // $html .= '<img src="' . $enclosure . '" class="img-responsive" alt="' . $item->title . '">';
+                    $html .= '</div></a>';
                 }
                 if ( !$enclosure ) {
-                    $html .= '<div class="entry-thumbnail"><a href="' . $link . '" title="' . $item->title . '">';
-                    $html .= '<img src="' . $img . '" class="img-responsive" alt="' . $item->title . '">';
-                    $html .= '</a></div>';
+                    $html .= '<a href="' . $item->link . '" title="' . $item->title . '">';
+                    $html .= '<div class="entry-thumbnail" style="background: url(' . $img . ') no-repeat center center;background-size: cover;">';
+                    // $html .= '<img src="' . $img . '" class="img-responsive" alt="' . $item->title . '">';
+                    $html .= '</div></a>';
                 }
                 $html .= '<div class="entry-content"><small>News</small><h2><a href="' . $link . '">';
                 $html .= $item->title;
