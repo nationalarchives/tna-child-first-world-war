@@ -112,7 +112,10 @@ form select {
 }
 .card .entry-thumbnail img {
     width: 100%;
-    height: auto;
+    height: 185px;
+    display: block;
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 .page-banner {
     padding: 0.5em 0;

@@ -37,6 +37,9 @@ function tna_child_styles() {
     wp_register_style( 'tna-child-styles', get_stylesheet_directory_uri() . '/style.css', array(), '0.1', 'all' );
     wp_enqueue_style( 'tna-parent-styles' );
     wp_enqueue_style( 'tna-child-styles' );
+    global $wp_styles;
+    wp_enqueue_style( 'tna-child-ie', get_stylesheet_directory_uri() . "/ie.css", array()  );
+    $wp_styles->add_data( 'tna-child-ie', 'conditional', 'IE' );
 }
 add_action( 'wp_enqueue_scripts', 'tna_child_styles' );
 
