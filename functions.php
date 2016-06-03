@@ -156,7 +156,7 @@ function fww_news_rss( $rssUrlNews, $id ) {
                 $link       = str_replace( 'livelb', 'www', $item->link );
                 $html = '<div class="col-sm-6"><div class="card clearfix">';
                 if ( $enclosure ) {
-                    $html .= '<a href="' . $item->link . '" title="' . $item->title . '">';
+                    $html .= '<a href="' . $link . '" title="' . $item->title . '">';
                     $html .= '<div class="entry-thumbnail" style="background: url(' . $enclosure . ') no-repeat center center;background-size: cover;">';
                     // $html .= '<img src="' . $enclosure . '" class="img-responsive" alt="' . $item->title . '">';
                     $html .= '</div></a>';
