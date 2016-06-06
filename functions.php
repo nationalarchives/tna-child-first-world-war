@@ -162,7 +162,7 @@ function fww_news_rss( $rssUrlNews, $id ) {
                     $html .= '</div></a>';
                 }
                 if ( !$enclosure ) {
-                    $html .= '<a href="' . $item->link . '" title="' . $item->title . '">';
+                    $html .= '<a href="' . $link . '" title="' . $item->title . '">';
                     $html .= '<div class="entry-thumbnail" style="background: url(' . $img . ') no-repeat center center;background-size: cover;">';
                     // $html .= '<img src="' . $img . '" class="img-responsive" alt="' . $item->title . '">';
                     $html .= '</div></a>';
