@@ -5,7 +5,7 @@ Author:         The National Archives
 Author URI:     http://www.nationalarchives.gov.uk/
 Description:    This should be used when creating new child themes for tna-base
 Template:       tna-base
-Version:        1.0
+Version:        1.1
 License:        GNU General Public License
 License URI:    license.txt
 Text Domain:    tna-base
@@ -61,6 +61,7 @@ ul.child li {
     margin: 5px 0;
 }
 .connect #email {
+    min-width: 200px;
     height: 40px;
 }
 .connect .sprite {
@@ -85,11 +86,16 @@ a:active, a:link, a:visited {
 .home .breadcrumbs a:active, .home .breadcrumbs a:link, .home .breadcrumbs a:visited {
     color: #fff;
 }
-form select {
+.select-menu {
+    padding: 1em;
+    background: #2d3b59;
+}
+.select-menu h4 {
     color: #fff;
-    background: #6e1608;
+    margin-top: 0;
+}
+form select {
     width: 100%;
-    margin-bottom: 1em;
 }
 /* Card styles */
 .card {
@@ -103,6 +109,9 @@ form select {
     width: 100%;
     max-height: 185px;
     overflow: hidden;
+}
+.rss-content .card .entry-thumbnail {
+    height: 185px;
 }
 .card .entry-thumbnail img {
     width: 100%;
@@ -128,8 +137,8 @@ form select {
     text-align: right;
 }
 @media (max-width:768px) {
-    .featured .col-sm-4 {
-        height: auto !important;
+    .card h2 {
+        font-size: 1.2em;
     }
     .connect .sprite {
         float: left;
@@ -139,5 +148,13 @@ form select {
     }
     .research-guide-form .field-row label, .research-guide-form .field-row input {
         width: 100%;
+    }
+}
+@media (max-width:576px) {
+    .featured .col-sm-4 {
+        height: auto !important;
+    }
+    .select-menu {
+        margin-bottom: 1em;
     }
 }

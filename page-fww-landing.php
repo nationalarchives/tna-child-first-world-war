@@ -114,7 +114,7 @@ get_header(); ?>
 						<?php endforeach;
 						wp_reset_postdata();?>
 					</div>
-					<div class="row equal-heights">
+					<div class="row equal-heights rss-content">
 
 						<!-- Dynamically pulls the latest blog item with the tagged first-world-war -->
 						<?php make_path_relative( fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '1' ) ) ?>
@@ -135,11 +135,11 @@ get_header(); ?>
 									<div class="col-sm-4">
 										<div class="clearfix">
 											<div class="entry-thumbnail">
-												<a href="http://discovery.nationalarchives.gov.uk/">
+												<a href="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/?research-category=first-world-war">
 													<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/fww-records.jpg" class="img-responsive" alt="Find your ancestor in our FWW records">
 												</a>
 											</div>
-												<h3><a href="http://discovery.nationalarchives.gov.uk/">Find your ancestor in our First World War records</a></h3>
+												<h3><a href="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/?research-category=first-world-war">Find your ancestor in our First World War records</a></h3>
 												<p>If you want to explore our First World War records and are new to researching at The National Archives, you <a href="http://www.nationalarchives.gov.uk/help-with-your-research/start-here/">can start your research here</a> or <a href="http://www.nationalarchives.gov.uk/contact/#livechat">chat to one of our reader advisors online</a>.</p>
 										</div>
 									</div>
@@ -152,9 +152,12 @@ get_header(); ?>
 											</div>
 											<h3><a href="centenary-digitised-records/">Browse our online collections</a></h3>
 											<p>We hold a vast collection of documents, letters, diaries, maps and photographs from the First World War, many of which have been digitised.</p>
-											<form class="hidden">
+											<div class="select-menu hidden">
+												<h4>Select a subject</h4>
+											<form>
+												<label class="sr-only" for="research-category">Select a First World War subject</label>
 												<select name="research-category" id="research-category" class="margin-right-medium">
-													<option value="0">Select a subject</option>
+													<option value="0">First World War</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/?research-category=first-world-war&sub-category%5B%5D=medals-and-awards&res-online=1">Medals</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/raf-officers-service-records-1918-1919/">RAF officers</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-seamens-campaign-medal-records-1914-1918/">Merchant seamen</option>
@@ -168,6 +171,7 @@ get_header(); ?>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/middlesex-military-service-appeal-tribunal-1916-1918/">Conscription appeals</option>
 												</select>
 											</form>
+											</div>
 										</div>
 									</div>
 									<div class="col-sm-4">
@@ -287,7 +291,7 @@ get_header(); ?>
 										<div class="entry-thumbnail">
 											<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/tnabookshop.jpg" class="img-responsive" alt="Visit The National Archives Bookshop at Kew">
 										</div>
-										<h4>First World War titles in the bookshop</h4>
+										<h3>First World War titles in the bookshop</h3>
 										<p>Our bookshop sells a wide range of books, DVDs and merchandise related to the First World War, including useful guides on tracing your ancestors.</p>
 										<p>Located on the ground floor opposite the cafe.</p>
 										<ul class="child"><li><a href="http://bookshop.nationalarchives.gov.uk/store/filtered/6/c_28/">Find more at our online Bookshop</a></li></ul>
