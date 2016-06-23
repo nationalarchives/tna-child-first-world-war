@@ -83,6 +83,7 @@ function first_sentence( $content ) {
 add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
 function wpdocs_theme_setup() {
     add_image_size( 'feature-thumb', 640, 320, true );
+    add_image_size( 'default-page-header', 820, 546 ); // for default page feature image
 }
 
 // Dynamic blog content via RSS feed
