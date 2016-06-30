@@ -158,6 +158,7 @@ get_header(); ?>
 												<label class="sr-only" for="research-category">Select a First World War subject</label>
 												<select name="research-category" id="research-category" class="margin-right-medium">
 													<option value="0">First World War</option>
+													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-war-diaries-1914-1922/">Unit war diaries</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/?research-category=first-world-war&sub-category%5B%5D=medals-and-awards&res-online=1">Medals</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/raf-officers-service-records-1918-1919/">RAF officers</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-seamens-campaign-medal-records-1914-1918/">Merchant seamen</option>
