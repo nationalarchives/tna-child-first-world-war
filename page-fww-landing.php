@@ -44,14 +44,9 @@ get_header(); ?>
 							<h2>Stay up-to-date with all our centenary activity</h2>
 						</div>
 						<div class="col-sm-4">
-							<form name="signup" id="banner-form" class="pad-medium" action="http://dmtrk.co.uk/signup.ashx" method="post" role="form">
-								<input type="hidden" name="addressbookid" value="281378">
-								<input type="hidden" name="userid" value="28895">
-								<input type="hidden" name="ReturnURL" value="http://nationalarchives.gov.uk/news/subscribe-confirmation.htm">
-								<label class="sr-only" for="email">Enter your email address to subscribe to our newsletter</label>
-								<input type="email" id="email" name="Email" required="" placeholder="Enter your email address" aria-label="Enter your email address to subscribe to our newsletter" aria-required="true">
-								<input id="newsletterSignUp" type="submit" value="Subscribe" class="button">
-							</form>
+
+<form name="signup" id="signup" action="http://r1.wiredemail.net/signup.ashx" method="post" role="form"><!-- <input type="hidden" name="addressbookid" value="636353"> homepage and general sign up --><input type="hidden" name="addressbookid" value="732466"> <!-- first world war portal sign up --><input type="hidden" name="userid" value="173459"><input type="hidden" name="ReturnURL" value="http://nationalarchives.gov.uk/news/subscribe-confirmation.htm"><label class="sr-only" for="Email">Sign up for our newsletter</label><input type="email" placeholder="Enter your email address" name="Email" id="Email" required="required"><input id="newsletterSignUp" type="submit" name="Submit" value="Sign up now" class="margin-left-medium"></form>
+
 						</div>
 						<div class="col-sm-2">
 							<a href="http://www.facebook.com/TheNationalArchives" target="_blank" title="External website Facebook - link opens in a new window">
@@ -158,6 +153,7 @@ get_header(); ?>
 												<label class="sr-only" for="research-category">Select a First World War subject</label>
 												<select name="research-category" id="research-category" class="margin-right-medium">
 													<option value="0">First World War</option>
+													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-war-diaries-1914-1922/">Unit war diaries</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/?research-category=first-world-war&sub-category%5B%5D=medals-and-awards&res-online=1">Medals</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/raf-officers-service-records-1918-1919/">RAF officers</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-seamens-campaign-medal-records-1914-1918/">Merchant seamen</option>
