@@ -26,7 +26,7 @@ $(document).ready(function () {
     // message while API is loading
     $events.html("<div class='entry-thumbnail'><a href='http://nationalarchives.eventbrite.co.uk/'><img src='/wp-content/themes/first-world-war/img/thumb-news.jpg' alt='First World War events'></a></div><div class='entry-content'><small>What&prime;s on</small><h2>First World War events</h2><p><i>Events programme loading.</i><br>If it does not appear after 10 seconds please <a href='http://nationalarchives.eventbrite.co.uk/' title='The National Archives events' target='_blank'>click here</a>.</p></div>");
     // Get data from API
-    $.get("https://www.eventbriteapi.com/v3/events/search/?q=first+world+war&sort_by=date&organizer.id=2226699547&token=5VVFLKAPZUXJSKQ3QTBG", function (res) {
+    $.get("https://www.eventbriteapi.com/v3/events/search/?q=first-world-war&sort_by=date&organizer.id=2226699547&token=5VVFLKAPZUXJSKQ3QTBG", function (res) {
         // displays upcoming feature event
         if (res.events.length && n == 1) {
             var s = "<div class='single-event'>";
