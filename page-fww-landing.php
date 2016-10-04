@@ -45,7 +45,15 @@ get_header(); ?>
 						</div>
 						<div class="col-sm-4">
 
-							<form name="signup" id="signup" action="http://r1.wiredemail.net/signup.ashx" method="post" role="form"><!-- <input type="hidden" name="addressbookid" value="636353"> homepage and general sign up --><input type="hidden" name="addressbookid" value="732466"> <!-- first world war portal sign up --><input type="hidden" name="userid" value="173459"><input type="hidden" name="ReturnURL" value="http://nationalarchives.gov.uk/news/subscribe-confirmation.htm"><label class="sr-only" for="Email">Sign up for our newsletter</label><input type="email" placeholder="Enter your email address" name="Email" id="Email" required="required"><input id="newsletterSignUp" type="submit" name="Submit" value="Sign up now" class="margin-left-medium"></form>
+							<form name="signup" id="signup" action="http://r1.wiredemail.net/signup.ashx" method="post" role="form">
+								<!-- <input type="hidden" name="addressbookid" value="636353"> homepage and general sign up -->
+								<input type="hidden" name="addressbookid" value="732466"> <!-- first world war portal sign up -->
+								<input type="hidden" name="userid" value="173459">
+								<input type="hidden" name="ReturnURL" value="http://nationalarchives.gov.uk/news/subscribe-confirmation.htm">
+								<label class="sr-only" for="Email">Sign up for our newsletter</label>
+								<input type="email" id="email" class="email" name="Email" required="required" placeholder="Enter your email address" aria-label="Enter your email address to subscribe to our newsletter" aria-required="true">
+								<input id="newsletterSignUp" type="submit" name="Submit" value="Sign up now" class="margin-left-medium">
+							</form>
 
 						</div>
 						<div class="col-sm-2">
