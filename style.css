@@ -139,6 +139,20 @@ form select {
 .research-guide-form .button-holder {
     text-align: right;
 }
+/* Flexbox */
+.equal-heights-flex-box {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.equal-heights-flex-box > div {
+    background: #fff;
+    background-clip: content-box;
+    margin-bottom: 1.5em;
+}
 @media (max-width:768px) {
     .card h2 {
         font-size: 1.2em;
