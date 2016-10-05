@@ -76,12 +76,6 @@ function category_archives( $wp_query ) {
         $wp_query->set( 'post_type', $my_post_array );
 }
 
-function first_sentence( $content ) {
-    $content = strip_tags( $content );
-    $pos     = strpos( $content, "." );
-    return substr( $content, 0, $pos + 1 );
-}
-
 add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
 function wpdocs_theme_setup() {
     add_image_size( 'feature-thumb', 640, 320, true );
@@ -179,7 +173,7 @@ function fww_news_rss( $rssUrlNews, $id ) {
                 $html .= '<small>' . $pubDate . '</small>';
                 preg_match( "/<p>(.*)<\/p>/", $item->description, $matches );
                 $intro = strip_tags($matches[1]);
-                $html .= '<p>' . $intro . '</p><ul class="child"><li><a href="http://www.nationalarchives.gov.uk/about/news/?news-tag=first-world-war&news-view=child" title="Read more news">More news</a></li></ul></div>';
+                $html .= '<p>' . first_sentence( $intro ) . '</p><ul class="child"><li><a href="http://www.nationalarchives.gov.uk/about/news/?news-tag=first-world-war&news-view=child" title="Read more news">More news</a></li></ul></div>';
                 $html .= '</div></div>';
                 $n ++;
             endforeach;
