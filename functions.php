@@ -54,7 +54,9 @@ function tna_child_scripts() {
         wp_register_script( 'moment-js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js' );
         wp_enqueue_script( 'tna-fww' );
         wp_enqueue_script( 'equal-heights' );
+        wp_script_add_data( 'equal-heights', 'conditional', 'lte IE 9' );
         wp_enqueue_script( 'equal-heights-var' );
+        wp_script_add_data( 'equal-heights-var', 'conditional', 'lte IE 9' );
         wp_enqueue_script( 'moment-js' );
     }
 }
@@ -72,12 +74,6 @@ function category_archives( $wp_query ) {
     $my_post_array = array('post','page');
     if ( $wp_query->get( 'category_name' ) || $wp_query->get( 'cat' ) )
         $wp_query->set( 'post_type', $my_post_array );
-}
-
-function first_sentence( $content ) {
-    $content = strip_tags( $content );
-    $pos     = strpos( $content, "." );
-    return substr( $content, 0, $pos + 1 );
 }
 
 add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
@@ -177,7 +173,7 @@ function fww_news_rss( $rssUrlNews, $id ) {
                 $html .= '<small>' . $pubDate . '</small>';
                 preg_match( "/<p>(.*)<\/p>/", $item->description, $matches );
                 $intro = strip_tags($matches[1]);
-                $html .= '<p>' . $intro . '</p><ul class="child"><li><a href="http://www.nationalarchives.gov.uk/about/news/?news-tag=first-world-war&news-view=child" title="Read more news">More news</a></li></ul></div>';
+                $html .= '<p>' . first_sentence( $intro ) . '</p><ul class="child"><li><a href="http://www.nationalarchives.gov.uk/about/news/?news-tag=first-world-war&news-view=child" title="Read more news">More news</a></li></ul></div>';
                 $html .= '</div></div>';
                 $n ++;
             endforeach;

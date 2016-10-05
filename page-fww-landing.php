@@ -44,14 +44,17 @@ get_header(); ?>
 							<h2>Stay up-to-date with all our centenary activity</h2>
 						</div>
 						<div class="col-sm-4">
-							<form name="signup" id="banner-form" class="pad-medium" action="http://dmtrk.co.uk/signup.ashx" method="post" role="form">
-								<input type="hidden" name="addressbookid" value="281378">
-								<input type="hidden" name="userid" value="28895">
+
+							<form name="signup" id="signup" action="http://r1.wiredemail.net/signup.ashx" method="post" role="form">
+								<!-- <input type="hidden" name="addressbookid" value="636353"> homepage and general sign up -->
+								<input type="hidden" name="addressbookid" value="732466"> <!-- first world war portal sign up -->
+								<input type="hidden" name="userid" value="173459">
 								<input type="hidden" name="ReturnURL" value="http://nationalarchives.gov.uk/news/subscribe-confirmation.htm">
-								<label class="sr-only" for="email">Enter your email address to subscribe to our newsletter</label>
-								<input type="email" id="email" name="Email" required="" placeholder="Enter your email address" aria-label="Enter your email address to subscribe to our newsletter" aria-required="true">
-								<input id="newsletterSignUp" type="submit" value="Subscribe" class="button">
+								<label class="sr-only" for="Email">Sign up for our newsletter</label>
+								<input type="email" id="email" class="email" name="Email" required="required" placeholder="Enter your email address" aria-label="Enter your email address to subscribe to our newsletter" aria-required="true">
+								<input id="newsletterSignUp" type="submit" name="Submit" value="Sign up now" class="margin-left-medium">
 							</form>
+
 						</div>
 						<div class="col-sm-2">
 							<a href="http://www.facebook.com/TheNationalArchives" target="_blank" title="External website Facebook - link opens in a new window">
@@ -64,64 +67,68 @@ get_header(); ?>
 					</div>
 				</section>
 				<section class="featured">
-					<div class="row equal-heights">
-						<div class="col-sm-4">
-							<div id="event" class="card clearfix">
-								<div class="entry-thumbnail">
-									<a href="http://nationalarchives.eventbrite.co.uk/" title="The National Archives events" target="_blank">
-										<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/thumb-news.jpg" alt="First World War events">
-									</a>
-								</div>
-								<div class="entry-content">
-									<small>What&prime;s on</small>
-									<h2>First World War events</h2>
-									<p>
-										<i>Events programme loading.</i> If it does not appear after 10 seconds please <a href="http://nationalarchives.eventbrite.co.uk/" title="The National Archives events" target="_blank">click here</a>.
-									</p>
-								</div>
-							</div>
-						</div>
-						<?php
-						$args = array( 'posts_per_page' => 2, 'post_type' => 'page', 'category_name' => 'feature' );
-						$fwwposts = get_posts( $args );
-						foreach ( $fwwposts as $post ) : setup_postdata( $post ); ?>
-							<?php $redirect = get_post_meta( $post->ID, 'redirectUrl', true );
-							if ( $redirect ) {
-								$postUrl = $redirect;
-							} else {
-								$postUrl = make_path_relative( get_page_link() );
-							} ?>
+					<div class="row">
+						<div class="equal-heights equal-heights-flex-box">
 							<div class="col-sm-4">
-								<div class="card clearfix">
+								<div id="event" class="card clearfix">
 									<div class="entry-thumbnail">
-										<a href="<?php echo $postUrl; ?>">
-											<?php echo make_path_relative( get_the_post_thumbnail( $post->ID, 'feature-thumb' ) ); ?>
+										<a href="http://nationalarchives.eventbrite.co.uk/" title="The National Archives events" target="_blank">
+											<img src="<?php echo make_path_relative( get_stylesheet_directory_uri() ) ?>/img/thumb-news.jpg" alt="First World War events">
 										</a>
 									</div>
 									<div class="entry-content">
-										<small>Feature</small>
-										<h2><a href="<?php echo $postUrl; ?>"><?php the_title(); ?></a></h2>
-										<?php
-											if(!$post->post_excerpt) {
-												echo first_sentence( get_the_content() );
-											} else {
-												the_excerpt();
-											}
-										?>
+										<small>What&prime;s on</small>
+										<h2>First World War events</h2>
+										<p>
+											<i>Events programme loading.</i> If it does not appear after 10 seconds please <a href="http://nationalarchives.eventbrite.co.uk/" title="The National Archives events" target="_blank">click here</a>.
+										</p>
 									</div>
 								</div>
 							</div>
-						<?php endforeach;
-						wp_reset_postdata();?>
+							<?php
+							$args = array( 'posts_per_page' => 2, 'post_type' => 'page', 'category_name' => 'feature' );
+							$fwwposts = get_posts( $args );
+							foreach ( $fwwposts as $post ) : setup_postdata( $post ); ?>
+								<?php $redirect = get_post_meta( $post->ID, 'redirectUrl', true );
+								if ( $redirect ) {
+									$postUrl = $redirect;
+								} else {
+									$postUrl = make_path_relative( get_page_link() );
+								} ?>
+								<div class="col-sm-4">
+									<div class="card clearfix">
+										<div class="entry-thumbnail">
+											<a href="<?php echo $postUrl; ?>">
+												<?php echo make_path_relative( get_the_post_thumbnail( $post->ID, 'feature-thumb' ) ); ?>
+											</a>
+										</div>
+										<div class="entry-content">
+											<small>Feature</small>
+											<h2><a href="<?php echo $postUrl; ?>"><?php the_title(); ?></a></h2>
+											<?php
+												if(!$post->post_excerpt) {
+													echo first_sentence( get_the_content() );
+												} else {
+													the_excerpt();
+												}
+											?>
+										</div>
+									</div>
+								</div>
+							<?php endforeach;
+							wp_reset_postdata();?>
+						</div>
 					</div>
-					<div class="row equal-heights rss-content">
+					<div class="row rss-content">
+						<div class="equal-heights equal-heights-flex-box">
 
 						<!-- Dynamically pulls the latest blog item with the tagged first-world-war -->
 						<?php make_path_relative( fww_rss( 'http://blog.nationalarchives.gov.uk/blog/tag/first-world-war/feed/', '1' ) ) ?>
 
 						<!-- Dynamically pulls the latest news item with the category first-world-war-portal-news -->
-						<?php make_path_relative( fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '3' ) ) ?>
+						<?php make_path_relative( fww_news_rss( 'http://www.nationalarchives.gov.uk/category/first-world-war-portal-news/feed/', '2' ) ) ?>
 
+						</div>
 					</div>
 				</section>
 				<section id="explore-our-records">
@@ -158,6 +165,7 @@ get_header(); ?>
 												<label class="sr-only" for="research-category">Select a First World War subject</label>
 												<select name="research-category" id="research-category" class="margin-right-medium">
 													<option value="0">First World War</option>
+													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-war-diaries-1914-1922/">Unit war diaries</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/?research-category=first-world-war&sub-category%5B%5D=medals-and-awards&res-online=1">Medals</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/raf-officers-service-records-1918-1919/">RAF officers</option>
 													<option value="http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-seamens-campaign-medal-records-1914-1918/">Merchant seamen</option>
