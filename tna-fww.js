@@ -59,7 +59,7 @@ $(document).ready(function () {
             } else {
                 x = res.events.length;
             }
-            for (var i = 1; i < x+1; i++) {
+            for (var i = 1; i < x; i++) {
                 var event = res.events[i];
                 var eventTime = moment(event.start.local).format('dddd D MMMM YYYY, h:mm a');
                 s += "<li><h4><a href='" + event.url + "' title='" + event.name.text + "' target='_blank'>" + event.name.text + "</a></h4><p>" + eventTime + "</p></li>";
