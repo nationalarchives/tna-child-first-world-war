@@ -1,10 +1,14 @@
 <?php
 
-// Edit as required
 function tnatheme_globals() {
     global $pre_path;
     global $pre_crumbs;
-    if (substr($_SERVER['REMOTE_ADDR'], 0, 3) === '10.') {
+    if (isset($_SERVER['HTTP_X_NGINX_PROXY'])) {
+        $pre_crumbs = array(
+            'First World War' => '/first-world-war/'
+        );
+        $pre_path = '/first-world-war';
+    } elseif (substr($_SERVER['REMOTE_ADDR'], 0, 3) === '10.') {
         $pre_path = '';
         $pre_crumbs = array(
             'First World War' => '/'
